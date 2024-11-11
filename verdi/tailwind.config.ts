@@ -11,6 +11,9 @@ const config: Config = {
       colors: {
         creme: "#ffeedc",
       },
+      fontFamily: {
+        migra: ['migra', 'sans-serif']
+      }
     },
   },
   plugins: [],
