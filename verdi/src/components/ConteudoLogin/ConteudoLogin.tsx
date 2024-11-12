@@ -14,11 +14,11 @@ export default function ConteudoLogin() {
         body: JSON.stringify({ email, senha }),
       });
       if (response.ok) {
-        console.log("Usuário Cadastrado com sucesso");
+        console.log("Usuário conectado com sucesso");
         setEmail("");
         setSenha("");
       } else {
-        console.error("Erro ao cadastrar");
+        console.error("Erro ao fazer o login");
       }
     } catch (error) {
       console.error("Falha no carregamento", error);
