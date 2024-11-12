@@ -12,7 +12,8 @@ const config: Config = {
         creme: "#ffeedc",
       },
       fontFamily: {
-        migra: ['migra', 'sans-serif']
+        migra: ['migra', 'sans-serif'],
+        jetbrains: ['Jetbrains Mono', 'sans-serif']
       }
     },
   },

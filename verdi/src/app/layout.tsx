@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Cabecalho from "@/components/Cabecalho/Cabecalho";
 
 export const metadata: Metadata = {
   title: "Verdí",
@@ -16,8 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className="bg-emerald-950">
-        {children}
+      <body className="bg-emerald-950 font-migra font-extrabold">
+        <Cabecalho />
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );
