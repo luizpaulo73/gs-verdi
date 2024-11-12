@@ -14,6 +14,9 @@ const config: Config = {
       fontFamily: {
         migra: ['migra', 'sans-serif'],
         jetbrains: ['Jetbrains Mono', 'sans-serif']
+      },
+      backgroundImage: {
+        'back-image' : "url('/background.jpg')"
       }
     },
   },
