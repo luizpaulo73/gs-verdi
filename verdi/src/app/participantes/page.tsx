@@ -8,7 +8,7 @@ import github from "@/img/GitHub.png";
 export default function Participantes() {
 
   return (
-    <section className="flex flex-col justify-around w-11/12 md:w-full mx-auto mt-5">
+    <section className="flex flex-col justify-around w-11/12 md:w-full mx-auto mt-4">
         <h1 className="text-creme text-center text-2xl mb-5 md:text-4xl">Participantes</h1>
         <div className="flex flex-col gap-5 mx-auto md:flex-row md:w-full justify-center">
         {participantes.map((aluno) => (
