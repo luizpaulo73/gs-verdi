@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
 
 export default function ConteudoLogin() {
 
@@ -16,26 +17,40 @@ export default function ConteudoLogin() {
   const validarEmail = () => setValidacaoEmail(emailRegex.test(email));
   const validarSenha = () => setValidacaoSenha(senhaRegex.test(senha));
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    try {
-      const response = await fetch(`http://localhost:8080/pessoas/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, senha }),
-      });
-      if (response.ok) {
-        console.log("Usuário conectado com sucesso");
-        setEmail("");
-        setSenha("");
-      } else {
-        console.error("Erro ao fazer o login");
-      }
-    } catch (error) {
-      console.error("Falha no carregamento", error);
-    }
-  };
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await fetch(`http://localhost:8080/pessoas/login`, {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify({ email, senha }),
+  //     });
+  //     if (response.ok) {
+  //       console.log("Usuário conectado com sucesso");
+  //       setEmail("");
+  //       setSenha("");
+  //     } else {
+  //       console.error("Erro ao fazer o login");
+  //     }
+  //   } catch (error) {
+  //     console.error("Falha no carregamento", error);
+  //   }
+  // };
 
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const loginData = new FormData(e.currentTarget);
+  
+    const email = loginData.get("email") as string;
+    const password = loginData.get("password") as string;
+  
+    const result = await signIn("credentials", {
+      email,
+      password,
+      redirect: true,
+      callbackUrl: "/conta",
+    });
+  }
   return (
     <section className="flex flex-col items-center gap-5">
       <form onSubmit={handleSubmit} className="flex flex-col items-center gap-5">
@@ -43,7 +58,8 @@ export default function ConteudoLogin() {
           <div className="flex flex-col gap-5">
             <div>
           <input
-            type="text"
+            name="email"
+            type="email"
             id="email"
             placeholder="E-mail"
             onChange={(e) => setEmail(e.target.value)}
@@ -54,6 +70,7 @@ export default function ConteudoLogin() {
           </div>  
           <div>
           <input
+            name="password"
             type="password"
             id="senha"
             placeholder="Senha"
