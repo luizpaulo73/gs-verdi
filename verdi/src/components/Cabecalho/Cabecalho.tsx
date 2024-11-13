@@ -14,7 +14,7 @@ export default function Cabecalho() {
                 <ul className="flex justify-around">
                     <li><Link href={'/'} className="text-creme text-xs font-extrabold sm:text-base md:text-lg xl:text-xl">Sobre Nós</Link></li>
                     <li><Link href={'/#planos'} className="text-creme text-xs font-extrabold sm:text-base md:text-lg xl:text-xl">Planos</Link></li>
-                    <li><Link href={'/'} className="text-creme text-xs font-extrabold sm:text-base md:text-lg xl:text-xl">Conta</Link></li>
+                    <li><Link href={'/conta'} className="text-creme text-xs font-extrabold sm:text-base md:text-lg xl:text-xl">Conta</Link></li>
                 </ul>
             </nav>
         </div>
