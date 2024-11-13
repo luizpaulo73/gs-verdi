@@ -1,32 +1,61 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-const handler = NextAuth({
-    pages: {
-        signIn: "/login"
-    },
-    providers: [
-        CredentialsProvider({
-          name: "Credentials",
-          credentials: {
-            email: { label: "Email", type: "email" },
-            password: { label: "Password", type: "password" }
-          },
-          async authorize(credentials, req) {
-            if (!credentials) {
-                return null
-            }
-            if(credentials.email === "luiz.paulo2005@hotmail.com" && credentials.password === "12345678") {
-                return {
-                    id: "1",
-                    name: "Plim",
-                    email: "luiz.paulo2005@hotmail.com"
-                } 
-            }
-            return null
-          }
-        })
-      ]
-})
+interface User {
+  id: string;
+  name: string;
+  email: string;
+}
 
-export { handler as GET , handler as POST}
+const handler = NextAuth({
+  pages: {
+    signIn: "/login",
+  },
+  providers: [
+    CredentialsProvider({
+      name: "Credentials",
+      credentials: {
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(credentials): Promise<User | null> {
+        if (!credentials) {
+          return null;
+        }
+
+        try {
+          // Fazendo a requisição para a API Flask para autenticação
+          const response = await fetch("http://127.0.0.1:5000/auth", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email: credentials.email,
+              senha: credentials.password,
+            }),
+          });
+
+          // Verificando a resposta da API
+          const data = await response.json();
+
+          // Se a resposta for sucesso, retornar o objeto User completo
+          if (data.success) {
+            return {
+              id: data.id,
+              name: data.nome,
+              email: credentials.email,
+            };
+            
+          }
+          return null;
+        } catch (error) {
+          console.error("Erro durante a autorização:", error);
+          return null;
+        }
+      },
+    }),
+  ],
+});
+
+export { handler as GET, handler as POST };
