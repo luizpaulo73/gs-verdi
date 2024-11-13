@@ -15,21 +15,11 @@ export default function FormCadastro() {
   const [validacaoEmail , setValidacaoEmail] = useState<boolean>(true)
   const [validacaoSenha , setValidacaoSenha] = useState<boolean>(true)
 
-  const validarNome = () => {
-    nome.length >= 3 ? setValidacaoNome(true) : setValidacaoNome(false)
-  }
+  const validarNome = () => setValidacaoNome(nome.length >= 3);
+  const validarCpf = () => setValidacaoCpf(cpf.length === 11);
+  const validarEmail = () => setValidacaoEmail(emailRegex.test(email));
+  const validarSenha = () => setValidacaoSenha(senhaRegex.test(senha));
 
-  const validarCpf = () => {
-    cpf.length === 11 ? setValidacaoCpf(true) : setValidacaoCpf(false)
-  }
-
-  const validarEmail = () => {
-    emailRegex.test(email) ? setValidacaoEmail(true) : setValidacaoEmail(false)
-  }
-
-  const validarSenha = () => {
-    senhaRegex.test(senha) ? setValidacaoSenha(true) : setValidacaoSenha(false)
-  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -54,9 +44,10 @@ export default function FormCadastro() {
   };
 
   return (
-    <section>
-      <form onSubmit={handleSubmit} className="flex flex-col items-center">
-        <fieldset className="flex flex-col">
+    <section className="flex flex-col gap-5">
+      <h1 className="text-creme text-center text-2xl sm:text-3xl">Insira os seus dados</h1>
+      <form onSubmit={handleSubmit} className="flex flex-col items-center gap-5">
+        <fieldset className="flex flex-col gap-5">
           <div>
           <input
             type="text"
@@ -65,9 +56,9 @@ export default function FormCadastro() {
             value={nome}
             onChange={(e) => setNome(e.target.value)}
             onBlur={validarNome}
-            className="bg-green-700 rounded-full text-creme w-[95vw] px-2"
+            className="bg-green-700 rounded-full px-2 w-64 placeholder:text-creme sm:placeholder:text-xl sm:p-2 text-creme"
           />
-          {!validacaoNome ? <p className="text-red-600">Nome precisa ter no mínimo 3 caracteres</p> : <></>}
+          {!validacaoNome ? <p className="text-red-600">Nome muito curto</p> : <></>}
           </div>
           <div>
           <input
@@ -77,7 +68,7 @@ export default function FormCadastro() {
             value={cpf}
             onChange={(e) => setCpf(e.target.value)}
             onBlur={validarCpf}
-            className="bg-green-700 rounded-full text-creme w-[95vw] px-2"
+            className="bg-green-700 rounded-full px-2 w-64 placeholder:text-creme sm:placeholder:text-xl sm:p-2 text-creme"
           />
           {!validacaoCpf ? <p className="text-red-600">CPF inválido</p> : <></>}
           </div>
@@ -89,7 +80,7 @@ export default function FormCadastro() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             onBlur={validarEmail}
-            className="bg-green-700 rounded-full text-creme w-[95vw] px-2"
+            className="bg-green-700 rounded-full px-2 w-64 placeholder:text-creme sm:placeholder:text-xl sm:p-2 text-creme"
           />
           {!validacaoEmail ? <p className="text-red-600">Email inválido</p> : <></>}
           </div>
@@ -101,12 +92,12 @@ export default function FormCadastro() {
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
             onBlur={validarSenha}
-            className="bg-green-700 rounded-full text-creme w-[95vw] px-2"
+            className="bg-green-700 rounded-full px-2 w-64 placeholder:text-creme sm:placeholder:text-xl sm:p-2 text-creme"
           />
           {!validacaoSenha ? <p className="text-red-600">Senha inválida</p> : <></>}
           </div>
         </fieldset>
-        <button type="submit" className="bg-green-700 text-creme p-2">Cadastrar</button>
+        <button type="submit" className="bg-green-700 text-creme p-2 sm:text-xl">Cadastrar</button>
       </form>
     </section>
   );
