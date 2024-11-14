@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "empresa": "SAP",
+        "descricao": "Desconto 40% Curso online",
+        "preco": "R$ 90",
+        "custo_credito": 3,
+        "imagem": "@/img/sap.png"
+    },
+    {
+        "id": 2,
+        "empresa": "SAP",
+        "descricao": "Curso Online Completo",
+        "preco": "R$ 240",
+        "custo_credito": 8,
+        "imagem": "@/img/sap.png"
+    },
+    {
+        "id": 3,
+        "empresa": "Fórmula E",
+        "descricao": "Ingresso Setor B",
+        "preco": "R$ 150",
+        "custo_credito": 5,
+        "imagem": "@/img/fia.png"
+    },
+    {
+        "id": 4,
+        "empresa": "Fórmula E",
+        "descricao": "Kit Oficial",
+        "preco": "R$ 120",
+        "custo_credito": 4,
+        "imagem": "@/img/fia.png"
+    },
+    {
+        "id": 5,
+        "empresa": "Mahindra Racing",
+        "descricao": "Produto Exclusivo (Miniatura Autografada)",
+        "preco": "R$ 150",
+        "custo_credito": 5,
+        "imagem": "@/img/mahindra.png"
+    },
+    {
+        "id": 6,
+        "empresa": "Mahindra Racing",
+        "descricao": "Fan Package",
+        "preco": "R$ 120",
+        "custo_credito": 4,
+        "imagem": "@/img/mahindra.png"
+    },
+    {
+        "id": 7,
+        "empresa": "Ultragaz",
+        "descricao": "Desconto 50% no Botijão",
+        "preco": "R$ 60",
+        "custo_credito": 2,
+        "imagem": "@/img/ultragaz.png"
+    },
+    {
+        "id": 8,
+        "empresa": "Ultragaz",
+        "descricao": "Botijão grátis",
+        "preco": "R$ 90",
+        "custo_credito": 3,
+        "imagem": "@/img/ultragaz.png"
+    }
+]
