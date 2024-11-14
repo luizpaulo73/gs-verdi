@@ -25,26 +25,31 @@ export default function FormCadastro() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (planos === "super-verdi") {
+    if (planos === "Plano Super Verdí") {
       setShowModal(true);
       return;
     }
 
     try {
+      const requestBody = { nome, cpf, email, senha, planos };
+      console.log("Corpo da requisição:", JSON.stringify(requestBody));
+
       const response = await fetch(`http://localhost:8080/pessoas/cadastro`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nome, cpf, email, senha, planos }),
+        body: JSON.stringify(requestBody),
       });
+
       if (response.ok) {
-        console.log("Usuário Cadastrado com sucesso");
+        console.log("Usuário cadastrado com sucesso");
         setNome("");
         setCpf("");
         setEmail("");
         setSenha("");
         setPlanos("");
       } else {
-        console.error("Erro ao cadastrar");
+        const errorMessage = await response.text();
+        console.error("Erro ao cadastrar:", errorMessage);
       }
     } catch (error) {
       console.error("Falha no carregamento", error);
@@ -97,8 +102,8 @@ export default function FormCadastro() {
               <option value="" disabled>
                 Selecione o Plano
               </option>
-              <option value="verdi">Plano Verdí</option>
-              <option value="super-verdi">Plano Super Verdí</option>
+              <option value="Plano Verdí">Plano Verdí</option>
+              <option value="Plano Super Verdí">Plano Super Verdí</option>
             </select>
           </div>
           <div>
