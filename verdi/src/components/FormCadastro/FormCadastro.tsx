@@ -9,7 +9,7 @@ export default function FormCadastro() {
   const [cpf, setCpf] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [senha, setSenha] = useState<string>("");
-  const [plano, setPlano] = useState<string>("");
+  const [planos, setPlanos] = useState<string>("");
 
   const [validacaoNome, setValidacaoNome] = useState<boolean>(true);
   const [validacaoCpf, setValidacaoCpf] = useState<boolean>(true);
@@ -25,7 +25,7 @@ export default function FormCadastro() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (plano === "super-verdi") {
+    if (planos === "super-verdi") {
       setShowModal(true);
       return;
     }
@@ -34,7 +34,7 @@ export default function FormCadastro() {
       const response = await fetch(`http://localhost:8080/pessoas/cadastro`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nome, cpf, email, senha, plano }),
+        body: JSON.stringify({ nome, cpf, email, senha, planos }),
       });
       if (response.ok) {
         console.log("Usuário Cadastrado com sucesso");
@@ -42,7 +42,7 @@ export default function FormCadastro() {
         setCpf("");
         setEmail("");
         setSenha("");
-        setPlano("");
+        setPlanos("");
       } else {
         console.error("Erro ao cadastrar");
       }
@@ -53,8 +53,13 @@ export default function FormCadastro() {
 
   return (
     <section className="flex flex-col gap-5">
-      <h1 className="text-creme text-center text-2xl sm:text-3xl">Insira os seus dados</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col items-center gap-5">
+      <h1 className="text-creme text-center text-2xl sm:text-3xl">
+        Insira os seus dados
+      </h1>
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col items-center gap-5"
+      >
         <fieldset className="flex flex-col gap-5">
           <div>
             <input
@@ -82,10 +87,10 @@ export default function FormCadastro() {
           </div>
           <div>
             <select
-              name="plano"
-              id="plano"
-              value={plano}
-              onChange={(e) => setPlano(e.target.value)}
+              name="planos"
+              id="planos"
+              value={planos}
+              onChange={(e) => setPlanos(e.target.value)}
               className="bg-green-700 rounded-full px-2 w-64 placeholder:text-creme sm:placeholder:text-xl sm:p-2 text-creme"
               required
             >
@@ -121,7 +126,10 @@ export default function FormCadastro() {
             {!validacaoSenha && <p className="text-red-600">Senha inválida</p>}
           </div>
         </fieldset>
-        <button type="submit" className="bg-green-700 text-creme p-2 sm:text-xl">
+        <button
+          type="submit"
+          className="bg-green-700 text-creme p-2 sm:text-xl"
+        >
           Cadastrar
         </button>
       </form>
@@ -130,7 +138,10 @@ export default function FormCadastro() {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-green-900 p-5 rounded-lg text-creme">
             <h2 className="text-xl mb-4">Pagamento</h2>
-            <p>Você selecionou o Plano Super Verdí. Por favor, prossiga com o pagamento.</p>
+            <p>
+              Você selecionou o Plano Super Verdí. Por favor, prossiga com o
+              pagamento.
+            </p>
             <button
               onClick={() => setShowModal(false)}
               className="bg-green-700 text-creme p-2 mt-4 rounded-full hover:bg-green-600 duration-300"
