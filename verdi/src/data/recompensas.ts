@@ -9,7 +9,7 @@ type TipoRecompensa = {
   empresa: string;
   descricao: string;
   preco: string;
-  custo_credito: number;
+  custo_pontos: number;
   imagem: StaticImageData | string;
 };
 
@@ -19,7 +19,7 @@ export const ListaRecompensa: TipoRecompensa[] = [
     empresa: "SAP",
     descricao: "Desconto 40% Curso online",
     preco: "R$ 90",
-    custo_credito: 3,
+    custo_pontos: 12600,
     imagem: sap,
   },
   {
@@ -27,7 +27,7 @@ export const ListaRecompensa: TipoRecompensa[] = [
     empresa: "SAP",
     descricao: "Curso Online Completo",
     preco: "R$ 240",
-    custo_credito: 8,
+    custo_pontos: 33600,
     imagem: sap,
   },
   {
@@ -35,7 +35,7 @@ export const ListaRecompensa: TipoRecompensa[] = [
     empresa: "Fórmula E",
     descricao: "Ingresso Setor B",
     preco: "R$ 150",
-    custo_credito: 5,
+    custo_pontos: 21000,
     imagem: fia,
   },
   {
@@ -43,7 +43,7 @@ export const ListaRecompensa: TipoRecompensa[] = [
     empresa: "Fórmula E",
     descricao: "Kit Oficial",
     preco: "R$ 120",
-    custo_credito: 4,
+    custo_pontos: 16800,
     imagem: fia,
   },
   {
@@ -51,7 +51,7 @@ export const ListaRecompensa: TipoRecompensa[] = [
     empresa: "Mahindra Racing",
     descricao: "Miniatura Autografada",
     preco: "R$ 150",
-    custo_credito: 5,
+    custo_pontos: 21000,
     imagem: mahindra,
   },
   {
@@ -59,7 +59,7 @@ export const ListaRecompensa: TipoRecompensa[] = [
     empresa: "Mahindra Racing",
     descricao: "Fan Package",
     preco: "R$ 120",
-    custo_credito: 4,
+    custo_pontos: 16800,
     imagem: mahindra,
   },
   {
@@ -67,7 +67,7 @@ export const ListaRecompensa: TipoRecompensa[] = [
     empresa: "Ultragaz",
     descricao: "Desconto 50% no Botijão",
     preco: "R$ 60",
-    custo_credito: 2,
+    custo_pontos: 8400,
     imagem: ultragaz,
   },
   {
@@ -75,7 +75,7 @@ export const ListaRecompensa: TipoRecompensa[] = [
     empresa: "Ultragaz",
     descricao: "Botijão grátis",
     preco: "R$ 90",
-    custo_credito: 3,
+    custo_pontos: 12600,
     imagem: ultragaz,
   },
 ];
