@@ -7,9 +7,9 @@ export default function BarraProgresso(props:{ pontos:number, pontosNecessarios:
 
   return (
     <>
-    <div className="w-5/6 bg-white h-3 flex mx-auto">
+    <div className="w-5/6 bg-white h-2 flex mx-auto">
       <div
-        className="bg-green-700 h-3"
+        className="bg-green-700 h-2"
         style={{ width: `${progressPercentage}%` }}
       ></div>
     </div>
