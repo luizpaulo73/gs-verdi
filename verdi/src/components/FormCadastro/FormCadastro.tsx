@@ -1,9 +1,11 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function FormCadastro() {
   const emailRegex: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const senhaRegex: RegExp = /^.{8,}$/;
+  const navigate = useRouter();
 
   const [nome, setNome] = useState<string>("");
   const [cpf, setCpf] = useState<string>("");
@@ -47,6 +49,7 @@ export default function FormCadastro() {
         setEmail("");
         setSenha("");
         setPlanos("");
+        navigate.push("/login")
       } else {
         const errorMessage = await response.text();
         console.error("Erro ao cadastrar:", errorMessage);

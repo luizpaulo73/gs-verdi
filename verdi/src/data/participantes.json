@@ -2,25 +2,25 @@
     {
         "nome": "Carolina Pinsdorf",
         "rm": 556898,
-        "sala": "1TDSPI",
-        "linkedin": "xxx",
-        "github": "yyy",
+        "sala": "1TDSPY",
+        "linkedin": "https://www.linkedin.com/in/carolinapinsdorf/",
+        "github": "https://github.com/carolpinsdorf",
         "foto": "xxx"
     },
     {
         "nome": "Luiz Paulo",
         "rm": 555497,
         "sala": "1TDSPF",
-        "linkedin": "xxx",
-        "github": "xxx",
+        "linkedin": "https://www.linkedin.com/in/luizpaulo73/",
+        "github": "https://github.com/luizpaulo73",
         "foto": "xxx"
     },
     {
         "nome": "Rafael de Souza",
         "rm": 555130,
         "sala": "1TDSPI",
-        "linkedin": "xxx",
-        "github": "xxx",
+        "linkedin": "https://www.linkedin.com/in/rafael-souza-fiap/",
+        "github": "https://github.com/RafaellSouzaPinto",
         "foto": "xxx"
     }
 ]
