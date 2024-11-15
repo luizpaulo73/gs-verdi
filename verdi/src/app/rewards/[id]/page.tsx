@@ -15,7 +15,8 @@ export default async function Resgatar({ params }: { params: { id: string } }) {
 
   const email = session?.user?.email || "";
   const userInfo = await getUserInfo(email);
-  const idUsuario = userInfo.id
+  const idUsuario = userInfo.id;
+  const totalPontos = userInfo.pontos
 
   const recompensaSelecionada = ListaRecompensa.find(
     (recompensa) => recompensa.id === id
@@ -23,14 +24,12 @@ export default async function Resgatar({ params }: { params: { id: string } }) {
 
   return (
     recompensaSelecionada && (
-      <section>
-        <div>
-          <Image
-            src={recompensaSelecionada.imagem}
-            alt={recompensaSelecionada.empresa}
-          />
+      <section className="flex flex-col items-center">
+        <div className="p-2 flex flex-col items-center gap-5 w-72 md:w-1/2">
+          <Image src={recompensaSelecionada.imagem} alt={recompensaSelecionada.empresa} className="w-2/3 lg:w-1/2 xl:lg:w-1/3 mx-auto"/>
+          <p className="text-creme md:text-md lg:text-lg xl:text-xl text-justify">{recompensaSelecionada.descricaoLonga}</p>
         </div>
-        <BotaoResgatar idUsuario={idUsuario} idRecompensa={id}/>
+        <BotaoResgatar idUsuario={idUsuario} idRecompensa={id} preco={recompensaSelecionada.custo_pontos} pontos={totalPontos}/>
       </section>
     )
   );
