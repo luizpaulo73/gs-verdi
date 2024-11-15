@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { ListaRecompensa } from "@/data/recompensas";
 
-export default function Recompensas() {
+export default function ConteudoRecompensas() {
   return (
     <section className="grid grid-cols-1 w-72 gap-3 sm:grid-cols-2 sm:w-11/12 md:grid-cols-3 lg:w-2/3">
         {ListaRecompensa.map((info) => (

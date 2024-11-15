@@ -1,7 +1,7 @@
-import Recompensas from "@/components/Recompensas/Recompensas";
+import ConteudoRecompensas from "@/components/ConteudoRecompensas/ConteudoRecompensas";
 
-export default function page() {
+export default function Recompensas() {
   return (
-    <Recompensas />
+    <ConteudoRecompensas />
   )
 }
