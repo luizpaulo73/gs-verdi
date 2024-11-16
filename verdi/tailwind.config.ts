@@ -12,8 +12,9 @@ const config: Config = {
         creme: "#ffeedc",
       },
       fontFamily: {
-        migra: ['migra', 'sans-serif'],
-        jetbrains: ['Jetbrains Mono', 'sans-serif']
+        kanit: ["kanit", "sans-serif"],
+        k2d: ["k2d", "sans-serif"],
+        ubuntu: ["ubuntu", "sans-serif"],
       },
       backgroundImage: {
         'back-image' : "url('/background.jpg')"
