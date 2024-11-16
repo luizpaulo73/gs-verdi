@@ -17,26 +17,6 @@ export default function ConteudoLogin() {
   const validarEmail = () => setValidacaoEmail(emailRegex.test(email));
   const validarSenha = () => setValidacaoSenha(senhaRegex.test(senha));
 
-  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   try {
-  //     const response = await fetch(`http://localhost:8080/pessoas/login`, {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify({ email, senha }),
-  //     });
-  //     if (response.ok) {
-  //       console.log("Usuário conectado com sucesso");
-  //       setEmail("");
-  //       setSenha("");
-  //     } else {
-  //       console.error("Erro ao fazer o login");
-  //     }
-  //   } catch (error) {
-  //     console.error("Falha no carregamento", error);
-  //   }
-  // };
-
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const loginData = new FormData(e.currentTarget);
