@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className="bg-emerald-950 font-k2d font-extrabold flex flex-col justify-between min-h-screen bg-back-image">
+      <body className="bg-emerald-950 font-k2d font-extrabold flex flex-col justify-between min-h-screen bg-back-image bg-fixed">
         <Cabecalho />
         <main className="flex flex-grow justify-center items-center">
           {children}

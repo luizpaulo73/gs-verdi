@@ -10,6 +10,10 @@ export default async function ListaTrajetos() {
     const idPessoa = userInfo?.id
 
   return (
-    <ListaTrajeto id={idPessoa}/>
+    <section className="w-full overflow-hidden">
+      <h1 className="text-creme text-center text-3xl mb-5">Trajetos</h1>
+      <ListaTrajeto id={idPessoa}/>
+    </section>
+    
   )
 }

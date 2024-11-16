@@ -23,7 +23,7 @@ export default function BotaoResgatar(props:{idUsuario:string , idRecompensa:num
             console.log("Usuário conectado com sucesso");
             setTimeout(() => {
               navigate.push("/resgatado");
-            }, 2000);
+            }, 1000);
           } else {
             console.error("Erro ao fazer o login");
           }
