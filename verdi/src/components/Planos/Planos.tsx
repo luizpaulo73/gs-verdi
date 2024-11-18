@@ -6,8 +6,8 @@ import checkmark from "@/img/checkmark.png";
 
 export default function Planos() {
     return(
-        <section id="planos" className="flex flex-col sm:flex-row sm:gap-6 lg:w-[70vw] lg:h-96">
-        <div className="border-2 border-green-700 w-72 mx-auto p-2 flex flex-col justify-around gap-6 lg:w-5/12">
+        <section id="planos" className="flex flex-col sm:flex-row sm:gap-6 lg:w-[70vw] lg:h-96 mx-auto">
+        <div className="border-2 border-green-700 w-[275px] mx-auto p-2 flex flex-col justify-around gap-6 lg:w-5/12">
             <div className="flex flex-col gap-2">
                 <h2 className="text-creme text-2xl lg:text-3xl">Plano</h2>
                 <Image src={logo} alt="Logo Verdí" className="w-1/3"/>
@@ -23,7 +23,7 @@ export default function Planos() {
                 <Link href={"/cadastro"} className="bg-green-700 text-creme p-1 lg:text-lg">Criar conta</Link>
             </div>
         </div>
-        <div className="border-2 border-green-700 w-72 mx-auto p-2 flex flex-col justify-around gap-6 lg:w-5/12">
+        <div className="border-2 border-green-700 w-[275px] mx-auto p-2 flex flex-col justify-around gap-6 lg:w-5/12">
             <div className="flex flex-col gap-2">
                 <h2 className="text-creme text-2xl">Plano</h2>
                 <div className="flex">

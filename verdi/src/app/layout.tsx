@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" className="scroll-smooth">
       <body className="bg-emerald-950 font-k2d font-extrabold flex flex-col justify-between min-h-screen bg-back-image bg-fixed">
         <Cabecalho />
         <main className="flex flex-grow justify-center items-center">
