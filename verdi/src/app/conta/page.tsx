@@ -6,21 +6,16 @@ import { getUserInfo } from '../api/usuario/[email]/route';
 import BotaoAssinatura from '@/components/BotaoAssinatura/BotaoAssinatura';
 
 export default async function Conta() {
-  // Obtendo a sessão do usuário
   const session = await getServerSession();
 
-  // Redirecionar para login se não estiver autenticado
   if (!session) {
     redirect("/login");
   }
 
-  // Obtendo o email da sessão
   const email = session?.user?.email || "";
 
-  // Chamando a função getUserInfo para obter as informações do usuário
   const userInfo = await getUserInfo(email);
 
-  // Extraindo dados do usuário
   const nomeCompleto = userInfo.nome || "";
   const primeiroNome = nomeCompleto.split(" ")[0];
   const quilometrosPercorridos = userInfo.distancia_acumulada || 0;
@@ -38,9 +33,12 @@ export default async function Conta() {
   return (
     <section>
       <div>
-      <h1 className='text-creme text-center text-2xl md:text-3xl'>
-        Olá {primeiroNome}!
-      </h1>
+        <div className='flex justify-between items-center'>
+          <h1 className='text-creme text-center text-2xl md:text-3xl'>
+            Olá {primeiroNome}!
+          </h1>
+          <Link href={"/conta/editar"} className='bg-green-700 text-creme p-1 sm:p-2'>Editar Conta</Link>
+        </div>
       <h2></h2>
       </div>
       <div className='border-2 border-green-700 w-[90vw] p-2 mt-8 xl:w-[33vw] flex flex-col gap-5'>
