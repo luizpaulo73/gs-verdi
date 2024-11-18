@@ -21,9 +21,7 @@ export default function BotaoResgatar(props:{idUsuario:string , idRecompensa:num
           });
           if (response.ok) {  
             console.log("Usuário conectado com sucesso");
-            setTimeout(() => {
-              navigate.push("/resgatado");
-            }, 1000);
+            navigate.push("/resgatado");
           } else {
             console.error("Erro ao fazer o login");
           }

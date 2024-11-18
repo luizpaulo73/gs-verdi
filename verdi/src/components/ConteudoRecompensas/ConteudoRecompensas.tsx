@@ -2,8 +2,17 @@ import Image from "next/image"
 import Link from "next/link";
 import { ListaRecompensa } from "@/data/recompensas";
 import BarraProgresso from "../BarraProgresso/BarraProgresso";
+import { getServerSession } from "next-auth";
+import { getUserInfo } from "@/app/api/usuario/[email]/route";
 
-export default function ConteudoRecompensas() {
+export default async function ConteudoRecompensas() {
+
+  const session = await getServerSession();
+  const email = session?.user?.email || "";
+  const userInfo = await getUserInfo(email);
+  const creditos = userInfo.pontos
+
+
   return (
     <section className="flex flex-col items-center mt-5">
       <h1 className="text-creme mb-5 text-xl sm:text-2xl md:text-4xl">Resgate suas Recompensas</h1>
@@ -15,7 +24,7 @@ export default function ConteudoRecompensas() {
                 </div>
                 <p className="text-creme">{info.empresa}</p>
                 <p className="text-creme">{info.descricao}</p>
-                <BarraProgresso pontos={5000} pontosNecessarios={info.custo_pontos}/>
+                <BarraProgresso pontos={creditos} pontosNecessarios={info.custo_pontos}/>
                 <Link href={`/rewards/${info.id}`} className="absolute w-full h-full"></Link>
             </div>
         ))}
