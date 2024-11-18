@@ -21,12 +21,13 @@ export default async function Conta() {
   const userInfo = await getUserInfo(email);
 
   // Extraindo dados do usuário
-  const nomeCompleto = userInfo?.nome || "";
+  const nomeCompleto = userInfo.nome || "";
   const primeiroNome = nomeCompleto.split(" ")[0];
-  const quilometrosPercorridos = userInfo?.distancia_acumulada || 0;
-  const pontosConquistados = userInfo?.pontos || 0;
+  const quilometrosPercorridos = userInfo.distancia_acumulada || 0;
+  const pontosConquistados = userInfo.pontos || 0;
+  const idUsuario = userInfo.id
   const plano = userInfo.planos
-  let planoAtivo : boolean
+  let planoAtivo: boolean
   
   if (plano == "Plano Verdí") {
     planoAtivo = false
@@ -53,7 +54,7 @@ export default async function Conta() {
         </div>
         <div className='flex justify-between items-center'>
           <p className='text-creme lg:text-xl'>Plano - </p>
-          <BotaoAssinatura planoAtivo={planoAtivo}/>
+          <BotaoAssinatura planoAtivo={planoAtivo} id={idUsuario}/>
         </div>
       </div>
       <div className='grid grid-cols-2 gap-4 mt-4 sm:grid-cols-4 xl:grid-cols-2'>
