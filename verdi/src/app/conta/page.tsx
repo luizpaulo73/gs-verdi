@@ -3,6 +3,7 @@ import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
 import BotaoLogout from '@/components/BotaoLogout/BotaoLogout';
 import { getUserInfo } from '../api/usuario/[email]/route';
+import BotaoAssinatura from '@/components/BotaoAssinatura/BotaoAssinatura';
 
 export default async function Conta() {
   // Obtendo a sessão do usuário
@@ -24,12 +25,23 @@ export default async function Conta() {
   const primeiroNome = nomeCompleto.split(" ")[0];
   const quilometrosPercorridos = userInfo?.distancia_acumulada || 0;
   const pontosConquistados = userInfo?.pontos || 0;
+  const plano = userInfo.planos
+  let planoAtivo : boolean
   
+  if (plano == "Plano Verdí") {
+    planoAtivo = false
+  } else {
+    planoAtivo = true
+  }
+
   return (
     <section>
+      <div>
       <h1 className='text-creme text-center text-2xl md:text-3xl'>
         Olá {primeiroNome}!
       </h1>
+      <h2></h2>
+      </div>
       <div className='border-2 border-green-700 w-[90vw] p-2 mt-8 xl:w-[33vw] flex flex-col gap-5'>
         <div className='flex justify-between'>
           <p className='text-creme lg:text-xl'>Total Km - </p>
@@ -38,7 +50,11 @@ export default async function Conta() {
         <div className='flex justify-between'>
           <p className='text-creme lg:text-xl'>Total de Pontos - </p>
           <p className='text-creme lg:text-xl'>{pontosConquistados}</p>
-          </div>
+        </div>
+        <div className='flex justify-between items-center'>
+          <p className='text-creme lg:text-xl'>Plano - </p>
+          <BotaoAssinatura planoAtivo={planoAtivo}/>
+        </div>
       </div>
       <div className='grid grid-cols-2 gap-4 mt-4 sm:grid-cols-4 xl:grid-cols-2'>
         <Link href={"/trajeto/iniciar"} className='bg-green-700 text-creme p-2 lg:text-xl text-center'>Iniciar Trajeto</Link>
