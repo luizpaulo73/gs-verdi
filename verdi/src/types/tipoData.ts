@@ -6,4 +6,9 @@ export type TipoTrajeto = {
     origem: string;
     destino: string;
   };
-  
+
+export type TipoRecompensas = {
+  id: number;
+  descricao: string;
+  data_resgate: string
+}  

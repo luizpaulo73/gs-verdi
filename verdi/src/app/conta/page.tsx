@@ -54,6 +54,10 @@ export default async function Conta() {
           <p className='text-creme lg:text-xl'>Plano - </p>
           <BotaoAssinatura planoAtivo={planoAtivo} id={idUsuario}/>
         </div>
+        <div className='flex justify-between items-center'>
+          <p className='text-creme lg:text-xl'>Resgates -</p>
+          <Link href={"/rewards/historico"} className='text-green-400 lg:text-xl underline'>Histórico</Link>
+        </div>
       </div>
       <div className='grid grid-cols-2 gap-4 mt-4 sm:grid-cols-4 xl:grid-cols-2'>
         <Link href={"/trajeto/iniciar"} className='bg-green-700 text-creme p-2 lg:text-xl text-center'>Iniciar Trajeto</Link>
