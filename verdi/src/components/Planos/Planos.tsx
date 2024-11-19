@@ -18,7 +18,7 @@ export default function Planos() {
             </div>
             <div className="flex justify-between items-center">
                 <div className="flex">
-                <h2 className="text-creme text-lg lg:text-2xl">R$0,00</h2><p className="text-creme lg:text-lg">/mês</p>
+                <h2 className="text-creme text-lg lg:text-2xl">Gratuito</h2>
                 </div>
                 <Link href={"/cadastro"} className="bg-green-700 text-creme p-1 lg:text-lg">Criar conta</Link>
             </div>
