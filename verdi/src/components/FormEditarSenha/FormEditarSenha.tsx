@@ -37,49 +37,49 @@ export default function FormEditarSenha(props: {idUsuario:number}) {
     }
   };
   return (
-    <section className="flex flex-col gap-5">
-      <h1 className="text-creme text-center text-2xl sm:text-3xl">Alterar Senha</h1>
+    <section className="flex flex-col gap-5 w-full bg-white p-5 sm:p-8 rounded-2xl">
+      <h1 className="text-black text-left text-2xl sm:text-3xl">Alterar Senha</h1>
       <form
         onSubmit={handleSubmit}
         className="flex flex-col items-center gap-5"
       >
         <fieldset className="flex flex-col gap-5">
           <div className="flex flex-col">
-            <label className="text-creme">Senha Atual:</label>
             <input
               type="password"
-              placeholder="Senha"
+              placeholder="Nova Senha"
               value={senhaAtual}
               onChange={(e) => setSenhaAtual(e.target.value)}
-                  className="bg-green-700 rounded-full px-2 w-64 placeholder:text-creme sm:placeholder:text-xl sm:p-2 text-creme"
+              className="bg-white px-2 w-64 placeholder:text-black sm:placeholder:text-xl sm:p-2 sm:w-full text-black
+                          focus:outline-none focus:shadow-none border-2 border-b-black border-transparent"
             />
             {!validacaoSenha && (
               <p className="text-red-600">A senha deve ter pelo menos 8 caracteres</p>
             )}
           </div>
           <div className="flex flex-col">
-            <label className="text-creme">Nova Senha:</label>
             <input
               type="password"
-              placeholder="Senha"
+              placeholder="Repetir nova Senha"
               value={novaSenha}
               onChange={(e) => setNovaSenha(e.target.value)}
               onBlur={validarSenha}
-              className="bg-green-700 rounded-full px-2 w-64 placeholder:text-creme sm:placeholder:text-xl sm:p-2 text-creme"
+              className="bg-white px-2 w-64 placeholder:text-black sm:placeholder:text-xl sm:p-2 sm:w-full text-black
+                          focus:outline-none focus:shadow-none border-2 border-b-black border-transparent"
             />
             {!validacaoSenha && (
               <p className="text-red-600">A senha deve ter pelo menos 8 caracteres</p>
             )}
           </div>
           <div className="flex flex-col">
-            <label className="text-creme">Confirmar Senha:</label>
             <input
               type="password"
               placeholder="Confirmar Senha"
               value={confirmarNovaSenha}
               onChange={(e) => setConfirmarNovaSenha(e.target.value)}
               onBlur={validarConfirmarSenha}
-              className="bg-green-700 rounded-full px-2 w-64 placeholder:text-creme sm:placeholder:text-xl sm:p-2 text-creme"
+              className="bg-white px-2 w-64 placeholder:text-black sm:placeholder:text-xl sm:p-2 sm:w-full text-black
+                          focus:outline-none focus:shadow-none border-2 border-b-black border-transparent"
             />
             {!validacaoConfirmarSenha && (
               <p className="text-red-600">As senhas não coincidem</p>
@@ -88,7 +88,7 @@ export default function FormEditarSenha(props: {idUsuario:number}) {
         </fieldset>
         <button
           type="submit"
-          className="bg-green-700 text-creme p-2 sm:text-xl"
+          className="bg-green-700 text-white p-2 sm:text-xl"
         >
           Salvar Alterações
         </button>

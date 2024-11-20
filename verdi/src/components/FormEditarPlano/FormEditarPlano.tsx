@@ -28,21 +28,21 @@ export default function FormEditarPlano(props: {idUsuario:number , plano:string}
   };
 
   return (
-    <section className="flex flex-col gap-5">
-      <h1 className="text-creme text-center text-2xl sm:text-3xl">Alterar Plano</h1>
+    <section className="flex flex-col gap-5 bg-white p-5 sm:p-8 rounded-2xl w-full">
+      <h1 className="text-black text-left text-2xl sm:text-3xl">Alterar Plano</h1>
       <form
         onSubmit={handleSubmit}
         className="flex flex-col items-center gap-5"
       >
         <fieldset className="flex flex-col gap-5">
           <div className="flex flex-col">
-            <label className="text-creme">Plano:</label>
             <select
               name="planos"
               id="planos"
               value={plano}
               onChange={(e) => setPlano(e.target.value)}
-              className="bg-green-700 rounded-full px-2 w-64 placeholder:text-creme sm:placeholder:text-xl sm:p-2 text-creme"
+              className="bg-white px-2 w-64 placeholder:text-black sm:placeholder:text-xl sm:p-2 sm:w-full text-black
+                          focus:outline-none focus:shadow-none border-2 border-b-black border-transparent"
               required
             >
               <option value="" disabled>
@@ -55,7 +55,7 @@ export default function FormEditarPlano(props: {idUsuario:number , plano:string}
         </fieldset>
         <button
           type="submit"
-          className="bg-green-700 text-creme p-2 sm:text-xl"
+          className="bg-green-700 text-white p-2 sm:text-xl"
         >
           Salvar Alterações
         </button>

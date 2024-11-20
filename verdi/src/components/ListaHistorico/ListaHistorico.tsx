@@ -1,6 +1,7 @@
 "use client"
 import { useState , useEffect } from "react";
 import { TipoRecompensas } from "@/types/tipoData";
+import BotaoVoltar from "../BotaoVoltar/BotaoVoltar";
 
 export default function ListaHistorico(props: {idUsuario:number}) {
 
@@ -34,10 +35,15 @@ export default function ListaHistorico(props: {idUsuario:number}) {
     }, [idUsuario]);
   
       return (
+        <>
+          <div className="w-11/12 sm:w-2/3 mx-auto flex justify-between mb-5">
+            <h2 className="text-left text-creme text-xl sm:text-3xl">Histórico de resgates</h2>
+            <BotaoVoltar />
+          </div>
           <div className="flex flex-col gap-4 mx-2 w-full items-center">
             {resgates.map((info) => (
               <div key={info.id} className="border-2 border-green-700 flex flex-col items-center justify-between p-2 gap-5
-                                            sm:w-2/3 lg:flex-row">
+                                            w-11/12 sm:w-2/3 lg:flex-row">
                 <div>
                 <p className="text-creme text-xs md:text-base xl:text-lg">Recompensa: {info.descricao}</p>
                 <p className="text-creme text-xs md:text-base xl:text-lg">Data do resgate: {info.data_resgate}</p>
@@ -45,5 +51,6 @@ export default function ListaHistorico(props: {idUsuario:number}) {
               </div>
             ))}
           </div>
+        </>
         );
 }

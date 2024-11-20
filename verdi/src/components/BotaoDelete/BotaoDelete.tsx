@@ -2,7 +2,7 @@
     import { useState } from "react";
     import { signOut } from "next-auth/react";
 
-    export default function BotaoDelete(props:{idUsuario:number}) {
+    export default function     BotaoDelete(props:{idUsuario:number}) {
 
         const idUsuario = props.idUsuario
 
@@ -41,14 +41,15 @@
         :
         <form onSubmit={deletarConta} className="flex flex-col gap-8">
             <div className="flex flex-col gap-6">
-                <label htmlFor="deletar" className="text-creme">Digite
+                <label htmlFor="deletar" className="text-black text-center">Digite
                 <span className="text-red-600"> {'"DELETAR"'}</span> para apagar sua conta</label>
                 <input
                 type="text"
                 id="deletar"
                 value={confirmarDelete}
                 onChange={(e) => setConfirmarDelete(e.target.value)}
-                className="border-2 border-red-600 placeholder:text-red-600 text-red-800 rounded-full px-2 md:w-full"/>
+                className="bg-white px-2 w-64 placeholder:text-black sm:placeholder:text-xl sm:p-2 sm:w-1/2 mx-auto text-black
+                          focus:outline-none focus:shadow-none border-2 border-b-black border-transparent"/>
             </div>
         <div className="flex justify-around">
             <button

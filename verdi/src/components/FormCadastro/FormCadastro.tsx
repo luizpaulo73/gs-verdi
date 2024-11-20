@@ -1,4 +1,4 @@
-"use client";
+  "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -17,7 +17,6 @@ export default function FormCadastro() {
   const [validacaoCpf, setValidacaoCpf] = useState<boolean>(true);
   const [validacaoEmail, setValidacaoEmail] = useState<boolean>(true);
   const [validacaoSenha, setValidacaoSenha] = useState<boolean>(true);
-  const [showModal, setShowModal] = useState<boolean>(false);
 
   const validarNome = () => setValidacaoNome(nome.length >= 3);
   const validarCpf = () => setValidacaoCpf(cpf.length === 11);
@@ -26,11 +25,6 @@ export default function FormCadastro() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (planos === "Plano Super Verdí") {
-      setShowModal(true);
-      return;
-    }
 
     try {
       const requestBody = { nome, cpf, email, senha, planos };
@@ -65,7 +59,7 @@ export default function FormCadastro() {
       </h1>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col items-center gap-5"
+        className="flex flex-col items-center gap-5 bg-white p-5 sm:p-8 rounded-2xl"
       >
         <fieldset className="flex flex-col gap-5">
           <div>
@@ -76,7 +70,8 @@ export default function FormCadastro() {
               value={nome}
               onChange={(e) => setNome(e.target.value)}
               onBlur={validarNome}
-              className="bg-green-700 rounded-full px-2 w-64 placeholder:text-creme sm:placeholder:text-xl sm:p-2 text-creme"
+              className="bg-white px-2 w-64 placeholder:text-black sm:placeholder:text-xl sm:p-2 sm:w-full text-black
+                          focus:outline-none focus:shadow-none border-2 border-b-black border-transparent"
             />
             {!validacaoNome && <p className="text-red-600">Nome muito curto</p>}
           </div>
@@ -88,7 +83,8 @@ export default function FormCadastro() {
               value={cpf}
               onChange={(e) => setCpf(e.target.value)}
               onBlur={validarCpf}
-              className="bg-green-700 rounded-full px-2 w-64 placeholder:text-creme sm:placeholder:text-xl sm:p-2 text-creme"
+              className="bg-white px-2 w-64 placeholder:text-black sm:placeholder:text-xl sm:p-2 sm:w-full text-black
+                          focus:outline-none focus:shadow-none border-2 border-b-black border-transparent"
             />
             {!validacaoCpf && <p className="text-red-600">CPF inválido</p>}
           </div>
@@ -98,7 +94,8 @@ export default function FormCadastro() {
               id="planos"
               value={planos}
               onChange={(e) => setPlanos(e.target.value)}
-              className="bg-green-700 rounded-full px-2 w-64 placeholder:text-creme sm:placeholder:text-xl sm:p-2 text-creme"
+              className="bg-white px-2 w-64 placeholder:text-black sm:placeholder:text-xl sm:p-2 sm:w-full text-black
+                          focus:outline-none focus:shadow-none border-2 border-b-black border-transparent"
               required
             >
               <option value="" disabled>
@@ -116,7 +113,8 @@ export default function FormCadastro() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               onBlur={validarEmail}
-              className="bg-green-700 rounded-full px-2 w-64 placeholder:text-creme sm:placeholder:text-xl sm:p-2 text-creme"
+              className="bg-white px-2 w-64 placeholder:text-black sm:placeholder:text-xl sm:p-2 sm:w-full text-black
+                          focus:outline-none focus:shadow-none border-2 border-b-black border-transparent"
             />
             {!validacaoEmail && <p className="text-red-600">Email inválido</p>}
           </div>
@@ -128,36 +126,19 @@ export default function FormCadastro() {
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
               onBlur={validarSenha}
-              className="bg-green-700 rounded-full px-2 w-64 placeholder:text-creme sm:placeholder:text-xl sm:p-2 text-creme"
+              className="bg-white px-2 w-64 placeholder:text-black sm:placeholder:text-xl sm:p-2 sm:w-full text-black
+                          focus:outline-none focus:shadow-none border-2 border-b-black border-transparent"
             />
             {!validacaoSenha && <p className="text-red-600">Senha inválida</p>}
           </div>
         </fieldset>
         <button
           type="submit"
-          className="bg-green-700 text-creme p-2 sm:text-xl"
+          className="bg-green-700 text-white p-2 sm:text-xl"
         >
           Cadastrar
         </button>
       </form>
-
-      {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-green-900 p-5 rounded-lg text-creme">
-            <h2 className="text-xl mb-4">Pagamento</h2>
-            <p>
-              Você selecionou o Plano Super Verdí. Por favor, prossiga com o
-              pagamento.
-            </p>
-            <button
-              onClick={() => setShowModal(false)}
-              className="bg-green-700 text-creme p-2 mt-4 rounded-full hover:bg-green-600 duration-300"
-            >
-              Fechar
-            </button>
-          </div>
-        </div>
-      )}
     </section>
   );
 }

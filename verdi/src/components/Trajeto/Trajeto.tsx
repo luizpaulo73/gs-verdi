@@ -47,24 +47,26 @@ export default function Trajeto(props: {id:number}) {
 
   return (
     <section className='md:w-screen flex flex-col items-center'>
-      <div className='flex justify-between w-full md:w-2/5 mb-10'>
+      <div className='flex justify-between w-full md:w-2/5 md:mb-10'>
         <h1 className='text-creme text-2xl md:text-3xl'>Iniciar Trajeto</h1>
         <BotaoVoltar />
       </div>  
-      <form onSubmit={iniciarTrajeto} className='flex flex-col items-center gap-6 container sm:w-1/2'>
+      <form onSubmit={iniciarTrajeto} className='flex flex-col items-center gap-6 container sm:w-1/2 bg-white p-5 sm:p-8 rounded-2xl'>
         <input
           type="text"
           placeholder="Início"
           value={origem}
           onChange={(e) => setOrigem(e.target.value)}
-          className='w-72 bg-green-700 rounded-full px-2 py-1 text-creme placeholder:text-creme md:w-4/5 lg:text-2xl'
+          className="bg-white px-2 w-64 placeholder:text-black sm:placeholder:text-xl sm:p-2 sm:w-full text-black
+                      focus:outline-none focus:shadow-none border-2 border-b-black border-transparent"
         />
         <select
           name="meioDeTransporte"
           id="meioDeTransporte"
           value={meioDeTransporte}
           onChange={(e) => setMeioDeTransporte(e.target.value)}
-          className='w-72 bg-green-700 rounded-full px-2 py-1 text-creme placeholder:text-creme md:w-4/5 lg:text-2xl'
+          className="bg-white px-2 w-64 placeholder:text-black sm:placeholder:text-xl sm:p-2 sm:w-full text-black
+                      focus:outline-none focus:shadow-none border-2 border-b-black border-transparent"
         >
           <option value="andar">À pé</option>
           <option value="bicicleta">Bicicleta</option>
@@ -76,9 +78,10 @@ export default function Trajeto(props: {id:number}) {
           placeholder="Fim"
           value={destino}
           onChange={(e) => setDestino(e.target.value)}
-          className='w-72 bg-green-700 rounded-full px-2 py-1 text-creme placeholder:text-creme md:w-4/5 lg:text-2xl'
+          className="bg-white px-2 w-64 placeholder:text-black sm:placeholder:text-xl sm:p-2 sm:w-full text-black
+                      focus:outline-none focus:shadow-none border-2 border-b-black border-transparent"
         />
-        <button type="submit" className="text-creme bg-green-700 p-2 lg:text-2xl  ">
+        <button type="submit" className="text-white bg-green-700 p-2 lg:text-2xl  ">
           Iniciar
         </button>
       </form>

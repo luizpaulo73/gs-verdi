@@ -19,7 +19,6 @@ export default async function Historico() {
 
     return (
         <section className="w-full overflow-hidden">
-            <h2 className="text-center text-creme text-3xl mb-5">Histórico de resgates</h2>
         <ListaHistorico idUsuario={idUsuario}/>
         </section>
       );

@@ -21,17 +21,18 @@ export default async function EditarConta() {
     const idUsuario:number = userInfo.id
     const plano = userInfo.planos
      return (
-        <div className="flex flex-col gap-8 justify-around w-full items-center min-h-[70vh]">
-          <div className="mb-4 flex w-full md:w-2/3 justify-between">
+        <div className="flex flex-col justify-around w-full items-center min-h-[70vh]">
+          <div className="flex w-full md:w-1/2 justify-between">
             <h1 className="text-center text-creme text-3xl">Editar Conta</h1>
             <BotaoVoltar />
           </div>
-          <div className="flex flex-col md:flex-row md:justify-around md:items-center w-full md:w-2/3 py-8 gap-8">
-            <FormEditarSenha idUsuario={idUsuario}/>
+          <div className="flex flex-col md:justify-around md:items-center w-11/12 md:w-1/2 py-8 gap-8">
             <FormEditarPlano idUsuario={idUsuario} plano={plano} />
-          </div>
-          <div className="min-w-60 flex flex-col items-center justify-center min-h[40vh] p-2 gap-5 md:w-1/2">
-            <BotaoDelete idUsuario={idUsuario}/>
+            <FormEditarSenha idUsuario={idUsuario}/>
+            <div className="w-full flex flex-col justify-center min-h[40vh] gap-5 md:w-full rounded-2xl bg-white p-5 sm:p-8">
+              <h1 className="text-black text-left text-2xl sm:text-3xl">Deletar Conta</h1>
+              <BotaoDelete idUsuario={idUsuario}/>
+            </div>
           </div>
         </div>
      )
