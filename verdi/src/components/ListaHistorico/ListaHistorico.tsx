@@ -12,7 +12,7 @@ export default function ListaHistorico(props: {idUsuario:number}) {
       const fetchTrajetos = async () => {
         try {
           const response = await fetch(
-            `http://localhost:5000/exibir/resgates/${idUsuario}`,
+            `https://python-verdi-deploy.vercel.app/exibir/resgates/${idUsuario}`,
             {
               method: "GET",
               headers: { "Content-Type": "application/json" },

@@ -25,7 +25,7 @@ const handler = NextAuth({
 
         try {
           // Fazendo a requisição para a API Flask para autenticação
-          const response = await fetch("http://127.0.0.1:5000/auth", {
+          const response = await fetch("https://python-verdi-deploy.vercel.app/auth", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

@@ -25,7 +25,7 @@ export default function Trajeto(props: {id:number}) {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/registrar`, {
+      const response = await fetch(`https://python-verdi-deploy.vercel.app/registrar`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -14,7 +14,7 @@ export default function BotaoResgatar(props:{idUsuario:string , idRecompensa:num
 
     const handleResgatar = async () => {
         try {
-          const response = await fetch(`http://localhost:5000/resgatar`, {
+          const response = await fetch(`https://python-verdi-deploy.vercel.app/resgatar`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ pessoa_id, recompensa_id }),
