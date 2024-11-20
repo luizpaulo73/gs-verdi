@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react'
+import BotaoVoltar from '../BotaoVoltar/BotaoVoltar';
 
 export default function Trajeto(props: {id:number}) {
   
@@ -46,6 +47,10 @@ export default function Trajeto(props: {id:number}) {
 
   return (
     <section className='md:w-screen flex flex-col items-center'>
+      <div className='flex justify-between w-full md:w-2/5 mb-10'>
+        <h1 className='text-creme text-2xl md:text-3xl'>Iniciar Trajeto</h1>
+        <BotaoVoltar />
+      </div>  
       <form onSubmit={iniciarTrajeto} className='flex flex-col items-center gap-6 container sm:w-1/2'>
         <input
           type="text"

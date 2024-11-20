@@ -4,6 +4,7 @@ import { ListaRecompensa } from "@/data/recompensas";
 import BarraProgresso from "../BarraProgresso/BarraProgresso";
 import { getServerSession } from "next-auth";
 import { getUserInfo } from "@/app/api/usuario/[email]/route";
+import BotaoVoltar from "../BotaoVoltar/BotaoVoltar";
 
 export default async function ConteudoRecompensas() {
 
@@ -15,7 +16,10 @@ export default async function ConteudoRecompensas() {
 
   return (
     <section className="flex flex-col items-center mt-5">
-      <h1 className="text-creme mb-5 text-xl sm:text-2xl md:text-4xl">Resgate suas Recompensas</h1>
+      <div className="flex items-center justify-between mb-5 w-full">
+        <h1 className="text-creme text-md sm:text-2xl md:text-4xl">Resgate suas Recompensas</h1>
+        <BotaoVoltar />
+      </div>
       <div className="grid grid-cols-1 w-72 gap-3 sm:grid-cols-2 sm:w-11/12 md:grid-cols-3 md:w-[700px] lg:w-[900px]">
         {ListaRecompensa.map((info) => (
             <div key={info.id} className="border-2 bg-emerald-950 border-green-700 p-2 flex flex-col justify-between h-80 relative">

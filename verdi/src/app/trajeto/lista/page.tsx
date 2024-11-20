@@ -1,6 +1,7 @@
 import { getServerSession } from "next-auth";
 import { getUserInfo } from "@/app/api/usuario/[email]/route";
 import ListaTrajeto from "@/components/ListaTrajeto/ListaTrajeto";
+import BotaoVoltar from "@/components/BotaoVoltar/BotaoVoltar";
 
 export default async function ListaTrajetos() {
 
@@ -10,8 +11,11 @@ export default async function ListaTrajetos() {
     const idPessoa = userInfo?.id
 
   return (
-    <section className="w-full overflow-hidden">
-      <h1 className="text-creme text-center text-3xl mb-5">Trajetos</h1>
+    <section className="w-full overflow-hidden flex flex-col items-center">
+      <div className="w-full sm:w-2/3 flex mb-5 justify-between">
+        <h1 className="text-creme text-center text-3xl lg:text-4xl">Trajetos</h1>
+        <BotaoVoltar />
+      </div>
       <ListaTrajeto id={idPessoa}/>
     </section>
     
