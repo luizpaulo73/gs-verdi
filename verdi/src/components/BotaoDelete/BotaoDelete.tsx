@@ -12,7 +12,7 @@
         const deletarConta = async (e : React.FormEvent<HTMLFormElement>) => {
             e.preventDefault();
             if (confirmarDelete.toUpperCase() !== "DELETAR") {
-                alert('Você deve digitar "DELETE" para confirmar a exclusão da conta.');
+                alert('Você deve digitar "DELETAR" para confirmar a exclusão da conta.');
                 return;
             }
             try {

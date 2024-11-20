@@ -17,7 +17,6 @@ export default function FormEditarPlano(props: {idUsuario:number , plano:string}
         });
   
         if (responsePlano.ok) {
-          alert('Plano alterado com sucesso!');
         } else {
           const errorMessage = await responsePlano.text();
           alert(`Erro ao alterar o plano: ${errorMessage}`);

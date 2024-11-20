@@ -12,12 +12,6 @@ export default function Trajeto(props: {id:number}) {
   const iniciarTrajeto = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const pessoa_id = props.id;
-    const meioDeTransporte = "metro";
-
-    console.log("Origem:", origem);
-    console.log("Destino:", destino);
-    console.log("Meio de Transporte:", meioDeTransporte);
-    console.log("Pessoa ID:", pessoa_id);
 
     if (!pessoa_id || !origem || !destino || !meioDeTransporte) {
       console.error("Todos os campos são obrigatórios");

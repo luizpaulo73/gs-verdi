@@ -30,7 +30,6 @@ export default async function Resgatar({ params }: { params: { id: string } }) {
           <p className="text-creme md:text-md lg:text-lg xl:text-xl text-justify">{recompensaSelecionada.descricaoLonga}</p>
         <BotaoResgatar idUsuario={idUsuario} idRecompensa={id} preco={recompensaSelecionada.custo_pontos} pontos={totalPontos}/>
         </div>
-        
       </section>
     )
   );

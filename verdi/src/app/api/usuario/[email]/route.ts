@@ -1,4 +1,3 @@
-// Exportando a função como 'getUserInfo'
 export async function getUserInfo(email: string) {
     try {
       if (!email) {

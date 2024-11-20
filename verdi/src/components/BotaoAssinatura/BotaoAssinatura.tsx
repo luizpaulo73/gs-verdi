@@ -22,14 +22,13 @@ export default function BotaoAssinatura(props: { planoAtivo: boolean; id: number
       });
 
       if (response.ok) {
-        alert('Plano alterado com sucesso!');
         setPlano(!plano);
       } else {
         const errorMessage = await response.text();
         alert(`Erro ao alterar o plano: ${errorMessage}`);
       }
     } catch (error) {
-      alert('Erro ao conectar ao servidor.');
+      console.error(error);
     } finally {
       setLoading(false);
     }

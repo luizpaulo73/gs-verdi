@@ -24,7 +24,6 @@ const handler = NextAuth({
         }
 
         try {
-          // Fazendo a requisição para a API Flask para autenticação
           const response = await fetch("https://python-verdi-deploy.vercel.app/auth", {
             method: "POST",
             headers: {
@@ -36,10 +35,8 @@ const handler = NextAuth({
             }),
           });
 
-          // Verificando a resposta da API
           const data = await response.json();
 
-          // Se a resposta for sucesso, retornar o objeto User completo
           if (data.success) {
             return {
               id: data.id,

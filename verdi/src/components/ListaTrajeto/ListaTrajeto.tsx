@@ -33,8 +33,6 @@ export default function ListaTrajeto(props: { id: number }) {
         console.error("Falha no carregamento", error);
       }
     };
-
-    // Chamar a função assíncrona
     fetchTrajetos();
   }, [pessoa_id]);
 

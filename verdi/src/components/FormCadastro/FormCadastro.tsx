@@ -34,7 +34,6 @@ export default function FormCadastro() {
 
     try {
       const requestBody = { nome, cpf, email, senha, planos };
-      console.log("Corpo da requisição:", JSON.stringify(requestBody));
 
       const response = await fetch(`http://localhost:8080/pessoas/cadastro`, {
         method: "POST",
