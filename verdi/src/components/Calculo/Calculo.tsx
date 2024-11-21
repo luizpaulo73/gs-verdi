@@ -19,37 +19,39 @@ export default function Calculo() {
   };
 
   return (
-    <section className="min-h-[50vh] md:flex md:flex-col md:items-center md:justify-around w-full">
-      <div className="md:flex items-center justify-between">
+    <section className="min-h-[50vh] md:flex md:flex-col md:items-center md:justify-around w-[90vw] lg:w-full">
+      <div className="`w-full md:flex items-center justify-between">
       <div className="md:w-2/6 lg:w-5/12">
         <h1 className="text-creme text-xl text-center md:text-3xl lg:text-4xl">Calcule o seu consumo mensal de carbono</h1>
       </div>
       <div className="md:w-2/6 lg:w-5/12">
-        <form onSubmit={calcularCarbono} className="flex flex-col items-center gap-5 md:w-full">
+        <form onSubmit={calcularCarbono} className="flex flex-col items-center gap-5 md:w-full bg-white p-5 rounded-2xl">
           <fieldset className="flex flex-col items-center gap-5 md:mx-auto">
             <div className="flex flex-col items-center">
-            <label className="text-creme text-sm lg:text-lg">Distância percorrida (km):</label>
+            <label className="text-black text-sm lg:text-lg">Distância percorrida (km):</label>
             <input
               type="number"
               value={distancia}
               onChange={(e) => setDistancia(Number(e.target.value))}
               placeholder="Quantidade de Km percorridos por mês"
-              className="bg-green-700 rounded-full px-2 text-creme w-72 md:w-full lg:text-xl"
+              className="bg-white px-2 w-64 placeholder:text-black sm:placeholder:text-xl sm:p-2 sm:w-full text-black
+                          focus:outline-none focus:shadow-none border-2 border-b-black border-transparent"
             />
             </div>
             <div className="flex flex-col items-center">
-            <label className="text-creme text-sm lg:text-lg">Consumo (km/l):</label>
+            <label className="text-black text-sm lg:text-lg">Consumo (km/l):</label>
             <input
               type="number"
               value={consumo}
               onChange={(e) => setConsumo(Number(e.target.value))}
               placeholder="Consumo do veículo Km/l"
-              className="bg-green-700 rounded-full px-2 text-creme w-72 md:w-full lg:text-xl"
+              className="bg-white px-2 w-64 placeholder:text-black sm:placeholder:text-xl sm:p-2 sm:w-full text-black
+                          focus:outline-none focus:shadow-none border-2 border-b-black border-transparent"
             />
             </div>
           </fieldset>
           <div className="w-full flex justify-center">
-          <button type="submit" className="bg-green-700 text-creme p-2 md:flex md:justify-center lg:text-xl">Calcular</button>
+          <button type="submit" className="bg-green-700 text-white p-2 md:flex md:justify-center lg:text-xl">Calcular</button>
           </div>
         </form>
       </div>

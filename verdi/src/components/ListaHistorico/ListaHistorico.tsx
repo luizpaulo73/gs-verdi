@@ -44,7 +44,8 @@ export default function ListaHistorico(props: {idUsuario:number}) {
             {resgates.map((info) => (
               <div key={info.id} className="border-2 border-green-700 flex flex-col items-center justify-between p-2 gap-5
                                             w-11/12 sm:w-2/3 lg:flex-row">
-                <div>
+                <div> 
+                <p>Empresa: {info.empresa}</p>
                 <p className="text-creme text-xs md:text-base xl:text-lg">Recompensa: {info.descricao}</p>
                 <p className="text-creme text-xs md:text-base xl:text-lg">Data do resgate: {info.data_resgate}</p>
                 </div>

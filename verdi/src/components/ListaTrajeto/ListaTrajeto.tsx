@@ -11,7 +11,7 @@ export default function ListaTrajeto(props: { id: number }) {
   const pessoa_id = props.id;
 
   const [trajetos, setTrajetos] = useState<TipoTrajeto[]>([]);
-  const [expandidoId, setExpandidoId] = useState<number | null>(null); // Armazena o ID do trajeto expandido
+  const [expandidoId, setExpandidoId] = useState<number | null>(null);
 
   useEffect(() => {
     const fetchTrajetos = async () => {
@@ -82,6 +82,9 @@ export default function ListaTrajeto(props: { id: number }) {
             </p>
             <p className="text-creme text-xs md:text-base xl:text-lg">
               Pontos conquistados: {info.pontos}
+            </p>
+            <p className="text-creme text-xs md:text-base xl:text-lg">
+              Data Trajeto: {info.data.slice(0,8)}
             </p>
           </div>
           </div>
