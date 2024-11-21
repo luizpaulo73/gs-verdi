@@ -2,11 +2,12 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-export default function BotaoResgatar(props:{idUsuario:string , idRecompensa:number , preco:number, pontos:number}) {
+export default function BotaoResgatar(props:{idUsuario:string , idRecompensa:number , preco:number, pontos:number , empresa:string}) {
     const pessoa_id = props.idUsuario;
     const recompensa_id = props.idRecompensa
     const preco = props.preco
     const pontos = props.pontos
+    const empresa = props.empresa
 
     const navigate = useRouter();
 
@@ -17,7 +18,7 @@ export default function BotaoResgatar(props:{idUsuario:string , idRecompensa:num
           const response = await fetch(`https://python-verdi-deploy.vercel.app/resgatar`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ pessoa_id, recompensa_id }),
+            body: JSON.stringify({ pessoa_id, recompensa_id, empresa }),
           });
           if (response.ok) {  
             console.log("Usuário conectado com sucesso");
