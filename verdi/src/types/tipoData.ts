@@ -9,6 +9,7 @@ export type TipoTrajeto = {
   };
 
 export type TipoRecompensas = {
+  nomeEmpresa: ReactNode;
   id: number;
   descricao: string;
   data_resgate: string;

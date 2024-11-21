@@ -7,7 +7,7 @@ export default function BotaoResgatar(props:{idUsuario:string , idRecompensa:num
     const recompensa_id = props.idRecompensa
     const preco = props.preco
     const pontos = props.pontos
-    const empresa = props.empresa
+    const nome_empresa = props.empresa
 
     const navigate = useRouter();
 
@@ -18,7 +18,7 @@ export default function BotaoResgatar(props:{idUsuario:string , idRecompensa:num
           const response = await fetch(`https://python-verdi-deploy.vercel.app/resgatar`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ pessoa_id, recompensa_id, empresa }),
+            body: JSON.stringify({ pessoa_id, recompensa_id, nome_empresa }),
           });
           if (response.ok) {  
             console.log("Usuário conectado com sucesso");
