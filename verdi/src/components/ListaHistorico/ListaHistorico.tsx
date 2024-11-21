@@ -5,7 +5,7 @@ import BotaoVoltar from "../BotaoVoltar/BotaoVoltar";
 
 export default function ListaHistorico(props: {idUsuario:number}) {
 
-    const idUsuario = props.idUsuario
+    const idUsuario:number = props.idUsuario
 
     const [resgates, setResgates] = useState<TipoRecompensas[]>([]);
 

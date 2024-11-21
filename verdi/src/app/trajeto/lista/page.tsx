@@ -6,9 +6,9 @@ import BotaoVoltar from "@/components/BotaoVoltar/BotaoVoltar";
 export default async function ListaTrajetos() {
 
     const session = await getServerSession();
-    const email = session?.user?.email || "";
+    const email:string = session?.user?.email || "";
     const userInfo = await getUserInfo(email);
-    const idPessoa = userInfo?.id
+    const idPessoa:number = userInfo?.id
 
   return (
     <section className="w-full overflow-hidden flex flex-col items-center">

@@ -12,16 +12,16 @@ export default async function Conta() {
     redirect("/login");
   }
 
-  const email = session?.user?.email || "";
+  const email:string = session?.user?.email || "";
 
   const userInfo = await getUserInfo(email);
 
-  const nomeCompleto = userInfo.nome || "";
-  const primeiroNome = nomeCompleto.split(" ")[0];
-  const quilometrosPercorridos = userInfo.distancia_acumulada || 0;
-  const pontosConquistados = userInfo.pontos || 0;
-  const plano = userInfo.planos
-  let planoAtivo: boolean
+  const nomeCompleto:string = userInfo.nome || "";
+  const primeiroNome:string = nomeCompleto.split(" ")[0];
+  const quilometrosPercorridos:number = userInfo.distancia_acumulada || 0;
+  const pontosConquistados:number = userInfo.pontos || 0;
+  const plano:string = userInfo.planos
+  let planoAtivo:boolean
   
   if (plano == "Plano Verdí") {
     planoAtivo = false

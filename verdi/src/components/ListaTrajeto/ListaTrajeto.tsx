@@ -8,7 +8,7 @@ import ping from "@/img/ping.png";
 import Mapa from "../Mapa/Mapa";
 
 export default function ListaTrajeto(props: { id: number }) {
-  const pessoa_id = props.id;
+  const pessoa_id:number = props.id;
 
   const [trajetos, setTrajetos] = useState<TipoTrajeto[]>([]);
   const [expandidoId, setExpandidoId] = useState<number | null>(null);

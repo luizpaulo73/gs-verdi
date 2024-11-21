@@ -3,11 +3,11 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function BotaoResgatar(props:{idUsuario:string , idRecompensa:number , preco:number, pontos:number , empresa:string}) {
-    const pessoa_id = props.idUsuario;
-    const recompensa_id = props.idRecompensa
-    const preco = props.preco
-    const pontos = props.pontos
-    const nome_empresa = props.empresa
+    const pessoa_id:string = props.idUsuario;
+    const recompensa_id:number = props.idRecompensa
+    const preco:number = props.preco
+    const pontos:number = props.pontos
+    const nome_empresa:string = props.empresa
 
     const navigate = useRouter();
 

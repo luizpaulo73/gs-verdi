@@ -9,9 +9,9 @@ import BotaoVoltar from "../BotaoVoltar/BotaoVoltar";
 export default async function ConteudoRecompensas() {
 
   const session = await getServerSession();
-  const email = session?.user?.email || "";
+  const email:string = session?.user?.email || "";
   const userInfo = await getUserInfo(email);
-  const creditos = userInfo.pontos
+  const creditos:number = userInfo.pontos
 
 
   return (
@@ -24,9 +24,9 @@ export default async function ConteudoRecompensas() {
         {ListaRecompensa.map((info) => (
             <div key={info.id} className="border-2 bg-emerald-950 border-green-700 p-2 flex flex-col justify-between h-80 relative">
                 <div className="h-2/5 flex items-center">
-                <Image src={info.imagem} alt={info.empresa} className="mb-4 mx-auto h-2/3 w-auto"/>
+                <Image src={info.imagem} alt={info.nomeEmpresa} className="mb-4 mx-auto h-2/3 w-auto"/>
                 </div>
-                <p className="text-creme">{info.empresa}</p>
+                <p className="text-creme">{info.nomeEmpresa}</p>
                 <p className="text-creme">{info.descricao}</p>
                 <BarraProgresso pontos={creditos} pontosNecessarios={info.custo_pontos}/>
                 <Link href={`/rewards/${info.id}`} className="absolute w-full h-full"></Link>

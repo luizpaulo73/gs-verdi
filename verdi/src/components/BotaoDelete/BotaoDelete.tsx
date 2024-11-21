@@ -4,7 +4,7 @@
 
     export default function     BotaoDelete(props:{idUsuario:number}) {
 
-        const idUsuario = props.idUsuario
+        const idUsuario:number = props.idUsuario
 
         const [telaDeletar, setTelaDeletar] = useState<boolean>(false);
         const [confirmarDelete, setConfirmarDelete] = useState<string>("");

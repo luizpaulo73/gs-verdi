@@ -12,10 +12,10 @@ export default async function Historico() {
     redirect("/login");
   }
 
-  const email = session?.user?.email || "";
+  const email:string = session?.user?.email || "";
 
   const userInfo = await getUserInfo(email);
-  const idUsuario = userInfo.id
+  const idUsuario:number = userInfo.id
 
     return (
         <section className="w-full overflow-hidden">

@@ -15,11 +15,11 @@ export default async function EditarConta() {
       redirect("/login");
     }
   
-    const email = session?.user?.email || "";
+    const email:string = session?.user?.email || "";
   
     const userInfo = await getUserInfo(email);
     const idUsuario:number = userInfo.id
-    const plano = userInfo.planos
+    const plano:string = userInfo.planos
      return (
         <div className="flex flex-col justify-around w-full items-center min-h-[70vh]">
           <div className="flex w-full md:w-1/2 justify-between">

@@ -3,7 +3,7 @@ import React from "react";
 
 export default function BarraProgresso(props:{ pontos:number, pontosNecessarios:number }) {
 
-  const progressPercentage = Math.min((props.pontos / props.pontosNecessarios) * 100, 100);
+  const progressPercentage:number = Math.min((props.pontos / props.pontosNecessarios) * 100, 100);
 
   return (
     <>
