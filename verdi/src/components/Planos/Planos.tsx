@@ -6,7 +6,7 @@ import checkmark from "@/img/checkmark.png";
 
 export default function Planos() {
     return(
-        <section id="planos" className="flex flex-col sm:flex-row sm:gap-6 lg:w-[70vw] lg:h-96 mx-auto">
+        <section id="planos" className="flex flex-col sm:flex-row gap-6 lg:w-[70vw] lg:h-96 mx-auto">
         <div className="border-2 border-green-700 w-[275px] mx-auto p-2 flex flex-col justify-around gap-6 lg:w-5/12">
             <div className="flex flex-col gap-2">
                 <h2 className="text-creme text-2xl lg:text-3xl">Plano</h2>
