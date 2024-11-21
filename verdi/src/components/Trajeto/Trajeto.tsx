@@ -72,7 +72,7 @@ export default function Trajeto(props: {id:number}) {
             className="bg-white px-2 w-64 placeholder:text-black sm:placeholder:text-xl sm:p-2 sm:w-full text-black
                         focus:outline-none focus:shadow-none border-2 border-b-black border-transparent"
           >
-            <option value="Selecione" disabled></option>
+            <option value="" disabled>Meio de Transporte</option>
             <option value="andar">À pé</option>
             <option value="bicicleta">Bicicleta</option>
             <option value="metroTrem">Metrô / Trem</option>
