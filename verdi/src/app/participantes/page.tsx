@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import participantes from "@/data/participantes.json";
+import { participantes } from "@/data/participantes";
 import linkedin from "@/img/linkedin.png";
 import github from "@/img/GitHub.png";
 
@@ -13,7 +13,7 @@ export default function Participantes() {
         <div className="flex flex-col gap-5 mx-auto md:flex-row md:w-full justify-center">
         {participantes.map((aluno) => (
             <div key={aluno.nome} className="border-2 border-green-700 text-center p-2 flex flex-col gap-4 w-64 md:w-1/4 md:text-xl">
-                {/* <Image src={'/'} alt={`Foto de ${aluno.nome}`/> */}
+                <Image src={aluno.foto} alt={`Foto de ${aluno.nome}`} className="lg:w-2/3 mx-auto rounded-2xl border-2 border-white mt-4"/>
                 <p className="text-creme">{aluno.nome}</p>
                 <p className="text-creme">RM - {aluno.rm}</p>
                 <p className="text-creme">{aluno.sala}</p>
