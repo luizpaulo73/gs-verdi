@@ -31,6 +31,7 @@ export default function ConteudoLogin() {
       callbackUrl: "/conta",
     });
   }
+
   return (
     <section className="flex flex-col items-center gap-5 bg-white rounded-2xl p-5 sm:p-8 min-w-[300px]">
       <form onSubmit={handleSubmit} className="flex flex-col items-center gap-5">

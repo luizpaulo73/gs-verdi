@@ -75,14 +75,11 @@ export default function Mapa(props: { inicio: string; destino: string }) {
 
       try {
         const response = await directionsService.route(request);
-        if (response.status === "OK") {
-          directionsRenderer.setDirections(response);
+        directionsRenderer.setDirections(response);
 
-          // Atualiza as informações da rota
-          const distancia = response.routes[0].legs[0].distance.text;
-          const tempo = response.routes[0].legs[0].duration.text;
-          setInfoRota({ distancia, tempo });
-        }
+        const distancia = response.routes[0].legs[0].distance?.text || "N/A";
+        const tempo = response.routes[0].legs[0].duration?.text || "N/A";
+        setInfoRota({ distancia, tempo });
       } catch (error) {
         console.error("Erro ao calcular direções:", error);
       }
@@ -93,7 +90,6 @@ export default function Mapa(props: { inicio: string; destino: string }) {
 
   return (
     <div className="relative w-full h-full">
-      {/* Mapa */}
       <div
         className="w-full h-full mx-auto rounded-2xl shadow-md"
         ref={mapRef}

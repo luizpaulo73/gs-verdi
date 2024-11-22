@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { participantes } from "@/data/participantes";
 import linkedin from "@/img/linkedin.png";
-import github from "@/img/GitHub.png";
+import github from "@/img/github.png";
 
 export default function Participantes() {
 
@@ -19,7 +19,7 @@ export default function Participantes() {
                 <p className="text-creme">{aluno.sala}</p>
                 <div className="flex justify-center">
                     <div>
-                        <Link href={aluno.github} className="w-1/4 h-auto">
+                        <Link href={aluno.linkedin} className="w-1/4 h-auto">
                             <Image src={linkedin} alt="Logo LinkedIn" className="w-full h-full hover:scale-110 duration-300"/>
                         </Link>
                     </div>

@@ -67,6 +67,7 @@ export default function Calculo() {
       {litrosConsumidos > 0 && (
         <div className="w-72 md:w-2/3 mx-auto">
           <p className="text-creme px-2 text-xs md:text-lg lg:text-xl xl:text-2xl md:text-justify mt-5">
+          Seu veículo libera aproximadamente {emissao.toFixed(2)} kg de CO₂ na atmosfera por mês.
             Você poderia economizar R${(3.79 * litrosConsumidos).toFixed(2)} por mês em combustível e ainda resgatar{" "}
             {parseFloat(distancia)} pontos ao optar pelo transporte público ou por alternativas sustentáveis.
           </p>

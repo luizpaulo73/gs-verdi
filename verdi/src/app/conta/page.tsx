@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
 import BotaoLogout from '@/components/BotaoLogout/BotaoLogout';
-import { getUserInfo } from '../api/usuario/[email]/route';
+import { getUserInfo } from '@/utils/api';
 import BotaoAssinatura from '@/components/BotaoAssinatura/BotaoAssinatura';
 
 export default async function Conta() {

@@ -1,6 +1,6 @@
 import { getServerSession } from "next-auth";
 import { redirect } from 'next/navigation';
-import { getUserInfo } from "@/app/api/usuario/[email]/route";
+import { getUserInfo } from "@/utils/api";
 
 import ListaHistorico from "@/components/ListaHistorico/ListaHistorico";
 

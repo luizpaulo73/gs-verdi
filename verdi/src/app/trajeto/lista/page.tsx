@@ -1,5 +1,5 @@
 import { getServerSession } from "next-auth";
-import { getUserInfo } from "@/app/api/usuario/[email]/route";
+import { getUserInfo } from "@/utils/api";
 import ListaTrajeto from "@/components/ListaTrajeto/ListaTrajeto";
 import BotaoVoltar from "@/components/BotaoVoltar/BotaoVoltar";
 

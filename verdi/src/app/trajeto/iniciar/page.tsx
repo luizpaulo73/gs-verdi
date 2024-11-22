@@ -1,6 +1,6 @@
 import Trajeto from "@/components/Trajeto/Trajeto";
 import { getServerSession } from "next-auth";
-import { getUserInfo } from "@/app/api/usuario/[email]/route";
+import { getUserInfo } from "@/utils/api";
 
 export default async function IniciarTrajeto() {
   

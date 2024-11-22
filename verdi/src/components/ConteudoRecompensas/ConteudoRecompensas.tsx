@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ListaRecompensa } from "@/data/recompensas";
 import BarraProgresso from "../BarraProgresso/BarraProgresso";
 import { getServerSession } from "next-auth";
-import { getUserInfo } from "@/app/api/usuario/[email]/route";
+import { getUserInfo } from "@/utils/api";
 import BotaoVoltar from "../BotaoVoltar/BotaoVoltar";
 
 export default async function ConteudoRecompensas() {

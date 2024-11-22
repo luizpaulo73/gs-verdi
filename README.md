@@ -12,6 +12,6 @@
 
 
 ### Link Vídeo do site
-#### 
+#### https://www.youtube.com/watch?v=j8XQphrJvRE
 
-### Link Vercel xxxx
+### Link Vercel https://verdi-luizs-projects-8a90d634.vercel.app/

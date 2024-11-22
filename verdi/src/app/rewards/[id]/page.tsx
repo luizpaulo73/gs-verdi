@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ListaRecompensa } from "@/data/recompensas";
 import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
-import { getUserInfo } from "@/app/api/usuario/[email]/route";
+import { getUserInfo } from "@/utils/api";
 import BotaoResgatar from "@/components/BotaoResgatar/BotaoResgatar";
 
 export default async function Resgatar({ params }: { params: { id: string } }) {
