@@ -64,7 +64,7 @@ export default function ConteudoLogin() {
           </div>
           </div>
         </fieldset>
-        <button type="submit" className="bg-green-700 text-white p-2 sm:text-xl">Entrar</button>
+        <button type="submit" className="bg-green-700 hover:bg-green-800 duration-300 text-white p-2 sm:text-xl">Entrar</button>
       </form>
       <div className="text-center">
       <p className="text-black sm:text-xl">Nâo possui uma conta?</p>

@@ -61,7 +61,7 @@ export default function Mapa(props: { inicio: string; destino: string }) {
       const directionsRenderer = new google.maps.DirectionsRenderer({
         map: mapa,
         polylineOptions: {
-          strokeColor: "#00FF00", // Linha verde
+          strokeColor: "#00FF00",
           strokeOpacity: 1.0,
           strokeWeight: 4,
         },
@@ -70,7 +70,7 @@ export default function Mapa(props: { inicio: string; destino: string }) {
       const request = {
         origin: inicio,
         destination: destino,
-        travelMode: google.maps.TravelMode.BICYCLING, // Modo bicicleta
+        travelMode: google.maps.TravelMode.WALKING,
       };
 
       try {
@@ -99,10 +99,9 @@ export default function Mapa(props: { inicio: string; destino: string }) {
         ref={mapRef}
       />
 
-      {/* Informações da rota no canto inferior esquerdo */}
       {infoRota && (
         <div
-          className="absolute bottom-4 left-4 bg-green-900 text-white p-4 rounded-lg shadow-lg"
+          className="absolute bottom-6 left-4 bg-green-900 text-white p-4 rounded-lg shadow-lg"
           style={{
             fontFamily: "Arial, sans-serif",
             fontSize: "12px",

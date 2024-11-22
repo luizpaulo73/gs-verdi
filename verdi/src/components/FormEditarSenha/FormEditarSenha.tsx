@@ -71,7 +71,7 @@ export default function FormEditarSenha(props: { idUsuario: number }) {
         </fieldset>
         <button
           type="submit"
-          className="bg-green-700 text-white p-2 sm:text-xl"
+          className="bg-green-700 hover:bg-green-800 duration-300 text-white p-2 sm:text-xl"
         >
           Salvar Alterações
         </button>

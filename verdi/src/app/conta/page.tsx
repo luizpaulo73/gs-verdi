@@ -36,7 +36,7 @@ export default async function Conta() {
           <h1 className='text-creme text-center text-2xl md:text-3xl'>
             Olá {primeiroNome}!
           </h1>
-          <Link href={"/conta/editar"} className='bg-green-700 text-creme p-1 sm:p-2'>Editar Conta</Link>
+          <Link href={"/conta/editar"} className='bg-green-700 hover:bg-green-800 duration-300 text-creme p-1 sm:p-2'>Editar Conta</Link>
         </div>
       <h2></h2>
       </div>
@@ -59,9 +59,9 @@ export default async function Conta() {
         </div>
       </div>
       <div className='grid grid-cols-2 gap-4 mt-4 sm:grid-cols-4 xl:grid-cols-2'>
-        <Link href={"/trajeto/iniciar"} className='bg-green-700 text-creme p-2 lg:text-xl text-center'>Iniciar Trajeto</Link>
-        <Link href={"/trajeto/lista"} className='bg-green-700 text-creme p-2 lg:text-xl text-center'>Exibir Trajetos</Link>
-        <Link href={"/rewards"} className='bg-green-700 text-creme p-2 lg:text-xl text-center'>Resgatar</Link>
+        <Link href={"/trajeto/iniciar"} className='bg-green-700 hover:bg-green-800 duration-300 text-creme p-2 lg:text-xl text-center'>Iniciar Trajeto</Link>
+        <Link href={"/trajeto/lista"} className='bg-green-700 hover:bg-green-800 duration-300 text-creme p-2 lg:text-xl text-center'>Exibir Trajetos</Link>
+        <Link href={"/rewards"} className='bg-green-700 hover:bg-green-800 duration-300 text-creme p-2 lg:text-xl text-center'>Resgatar</Link>
         <BotaoLogout />
       </div>
     </section>

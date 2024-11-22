@@ -20,9 +20,10 @@ export default async function ConteudoRecompensas() {
         <h1 className="text-creme text-md sm:text-2xl md:text-4xl">Resgate suas Recompensas</h1>
         <BotaoVoltar />
       </div>
-      <div className="grid grid-cols-1 w-72 gap-3 sm:grid-cols-2 sm:w-11/12 md:grid-cols-3 md:w-[700px] lg:w-[900px]">
+      <div className="grid grid-cols-1 w-72 gap-5 sm:grid-cols-2 sm:w-11/12 md:grid-cols-3 md:w-[700px] lg:w-[900px]">
         {ListaRecompensa.map((info) => (
-            <div key={info.id} className="border-2 bg-emerald-950 border-green-700 p-2 flex flex-col justify-between h-80 relative">
+            <div key={info.id} className="border-2 bg-emerald-950 border-green-700 p-2 flex flex-col justify-between h-80 relative
+                                          hover:scale-105 duration-300">
                 <div className="h-2/5 flex items-center">
                 <Image src={info.imagem} alt={info.nomeEmpresa} className="mb-4 mx-auto h-2/3 w-auto"/>
                 </div>

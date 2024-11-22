@@ -96,7 +96,7 @@ export default function Trajeto(props: { id: number }) {
           />
           <button
             type="submit"
-            className="text-white bg-green-700 p-2 lg:text-2xl"
+            className="text-white bg-green-700 hover:bg-green-800 duration-300 p-2 lg:text-2xl"
           >
             Iniciar
           </button>

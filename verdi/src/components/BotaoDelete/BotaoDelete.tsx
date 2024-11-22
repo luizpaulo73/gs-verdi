@@ -35,7 +35,7 @@
         <>
         {telaDeletar === false ? 
         <div className="w-full flex flex-col items-center">
-        <button onClick={() => setTelaDeletar(!telaDeletar)} className='bg-red-600 text-white p-2'>Deletar Conta</button>
+        <button onClick={() => setTelaDeletar(!telaDeletar)} className='bg-red-600 hover:bg-red-700 duration-300 text-white p-2'>Deletar Conta</button>
         <p className="text-white">Essa ação é irreversível</p>
         </div>
         :
@@ -54,10 +54,10 @@
         <div className="flex justify-around">
             <button
             type="submit"
-            className="bg-red-600 text-white p-2">Confirmar</button>
+            className="bg-red-600 hover:bg-red-700 duration-300 text-white p-2">Confirmar</button>
             <button
             onClick={() => setTelaDeletar(!telaDeletar)}
-            className="bg-green-700 text-white p-2">Cancelar</button>
+            className="bg-green-700 hover:bg-green-800 duration-300 text-white p-2">Cancelar</button>
         </div>
         </form>}
         

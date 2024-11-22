@@ -9,7 +9,7 @@ export default function Error() {
         Parece que você se perdeu na floresta 🌳
       </p>
       <Link href="/">
-        <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+        <button className="bg-green-700 hover:bg-green-800 duration-300 text-white font-bold py-2 px-4 rounded">
           Voltar para a Home
         </button>
       </Link>

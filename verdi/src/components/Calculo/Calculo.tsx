@@ -55,7 +55,7 @@ export default function Calculo() {
               </div>
             </fieldset>
             <div className="w-full flex justify-center">
-              <button type="submit" className="bg-green-700 text-white p-2 md:flex md:justify-center lg:text-xl">
+              <button type="submit" className="bg-green-700 hover:bg-green-800 duration-300 text-white p-2 md:flex md:justify-center lg:text-xl">
                 Calcular
               </button>
             </div>

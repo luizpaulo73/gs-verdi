@@ -20,7 +20,7 @@ export default function Planos() {
                 <div className="flex">
                 <h2 className="text-creme text-lg lg:text-2xl">Gratuito</h2>
                 </div>
-                <Link href={"/cadastro"} className="bg-green-700 text-creme p-1 lg:text-lg">Criar conta</Link>
+                <Link href={"/cadastro"} className="bg-green-700 hover:bg-green-800 duration-300 text-creme p-1 lg:text-lg">Criar conta</Link>
             </div>
         </div>
         <div className="border-2 border-green-700 w-[275px] mx-auto p-2 flex flex-col justify-around gap-6 lg:w-5/12">
@@ -45,7 +45,7 @@ export default function Planos() {
                 <div className="flex">
                 <h2 className="text-creme text-lg lg:text-2xl">R$9,99</h2><p className="text-creme lg:text-lg">/mês</p>
                 </div>
-                <Link href={"/cadastro"} className="bg-green-700 text-creme p-1 text-center lg:text-lg">Contratar</Link>
+                <Link href={"/cadastro"} className="bg-green-700 hover:bg-green-800 duration-300 text-creme p-1 text-center lg:text-lg">Contratar</Link>
             </div>
         </div>
         </section>

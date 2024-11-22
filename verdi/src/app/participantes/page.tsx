@@ -20,12 +20,12 @@ export default function Participantes() {
                 <div className="flex justify-center">
                     <div>
                         <Link href={aluno.github} className="w-1/4 h-auto">
-                            <Image src={linkedin} alt="Logo LinkedIn" className="w-full h-full"/>
+                            <Image src={linkedin} alt="Logo LinkedIn" className="w-full h-full hover:scale-110 duration-300"/>
                         </Link>
                     </div>
                     <div>
                         <Link href={aluno.github} className="w-1/4 h-auto">
-                            <Image src={github} alt="Logo GitHub" className="w-full h-full"/>
+                            <Image src={github} alt="Logo GitHub" className="w-full h-full hover:scale-110 duration-300"/>
                         </Link>
                     </div>
                 </div>
