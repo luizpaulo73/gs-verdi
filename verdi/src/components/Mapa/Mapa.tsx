@@ -4,14 +4,19 @@ import { useEffect, useRef, useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 import estiloMapa from "@/data/estiloMapa.json";
 
-export default function Mapa(props: {inicio: string , destino: string}) {
+export default function Mapa(props: { inicio: string; destino: string }) {
   const mapRef = useRef<HTMLDivElement>(null);
 
-  const [mapa, setMapa] = useState(null);
-  const [direcoes, setDirecoes] = useState(null);
-  const inicio = props.inicio
-  const destino = props.destino
+  const [mapa, setMapa] = useState<google.maps.Map | null>(null);
+  const [infoRota, setInfoRota] = useState<{
+    distancia: string;
+    tempo: string;
+  } | null>(null);
 
+  const inicio = props.inicio;
+  const destino = props.destino;
+
+  // Inicializa o mapa
   useEffect(() => {
     const initMap = async () => {
       const loader = new Loader({
@@ -22,8 +27,8 @@ export default function Mapa(props: {inicio: string , destino: string}) {
       await loader.load();
 
       const position = {
-        lat: -12.0464,
-        lng: -77.0283,
+        lat: -23.5640843,
+        lng: -46.6523865,
       };
 
       const mapOptions = {
@@ -47,25 +52,36 @@ export default function Mapa(props: {inicio: string , destino: string}) {
     initMap();
   }, []);
 
+  // Calcula a rota e exibe no mapa
   useEffect(() => {
     const calcularDirecao = async () => {
       if (!inicio || !destino || !mapa) return;
 
       const directionsService = new google.maps.DirectionsService();
-      const directionsRenderer = new google.maps.DirectionsRenderer();
-      directionsRenderer.setMap(mapa);
+      const directionsRenderer = new google.maps.DirectionsRenderer({
+        map: mapa,
+        polylineOptions: {
+          strokeColor: "#00FF00", // Linha verde
+          strokeOpacity: 1.0,
+          strokeWeight: 4,
+        },
+      });
 
       const request = {
         origin: inicio,
         destination: destino,
-        travelMode: google.maps.TravelMode.WALKING,
+        travelMode: google.maps.TravelMode.BICYCLING, // Modo bicicleta
       };
 
       try {
         const response = await directionsService.route(request);
         if (response.status === "OK") {
-          setDirecoes(response);
           directionsRenderer.setDirections(response);
+
+          // Atualiza as informações da rota
+          const distancia = response.routes[0].legs[0].distance.text;
+          const tempo = response.routes[0].legs[0].duration.text;
+          setInfoRota({ distancia, tempo });
         }
       } catch (error) {
         console.error("Erro ao calcular direções:", error);
@@ -75,5 +91,32 @@ export default function Mapa(props: {inicio: string , destino: string}) {
     calcularDirecao();
   }, [inicio, destino, mapa]);
 
-  return <div className="w-full h-full mx-auto rounded-2xl" ref={mapRef} />;
+  return (
+    <div className="relative w-full h-full">
+      {/* Mapa */}
+      <div
+        className="w-full h-full mx-auto rounded-2xl shadow-md"
+        ref={mapRef}
+      />
+
+      {/* Informações da rota no canto inferior esquerdo */}
+      {infoRota && (
+        <div
+          className="absolute bottom-4 left-4 bg-green-900 text-white p-4 rounded-lg shadow-lg"
+          style={{
+            fontFamily: "Arial, sans-serif",
+            fontSize: "12px",
+            maxWidth: "250px",
+          }}
+        >
+          <p style={{ margin: 0 }}>
+            <b>Distância:</b> {infoRota.distancia}
+          </p>
+          <p style={{ margin: 0 }}>
+            <b>Tempo:</b> {infoRota.tempo}
+          </p>
+        </div>
+      )}
+    </div>
+  );
 }
