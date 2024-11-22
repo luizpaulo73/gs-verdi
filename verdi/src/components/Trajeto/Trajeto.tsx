@@ -10,17 +10,14 @@ export default function Trajeto(props: { id: number }) {
   const [pontos, setPontos] = useState<string>("");
   const [meioDeTransporte, setMeioDeTransporte] = useState<string>("");
   const [mostrarMapa, setMostrarMapa] = useState<boolean>(false);
+  const [validarEndereco, setValidarEndereco] = useState<boolean>(true)
 
   const iniciarTrajeto = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const pessoa_id: number = props.id;
 
-    if (!pessoa_id || !origem || !destino || !meioDeTransporte) {
-      console.error("Todos os campos são obrigatórios");
-      return;
-    }
-
     try {
+      
       const response = await fetch(
         `https://python-verdi-deploy.vercel.app/registrar`,
         {
@@ -45,6 +42,12 @@ export default function Trajeto(props: { id: number }) {
       } else {
         const errorData = await response.json();
         console.error("Erro ao registrar o trajeto:", errorData);
+        setValidarEndereco(false);
+        setOrigem("");
+        setDestino("");
+        setDistancia("");
+        setPontos("");
+        setMeioDeTransporte("");
       }
     } catch (error) {
       console.error("Falha no carregamento", error);
@@ -54,7 +57,7 @@ export default function Trajeto(props: { id: number }) {
   return (
     <section className="flex flex-col lg:flex-row lg:justify-around lg:items-center w-screen">
       <div className="md:w-screen lg:w-[40vw] flex flex-col items-center">
-        <div className="flex justify-between w-full md:w-2/5 lg:w-full mb-5 md:mb-10">
+        <div className="flex justify-between w-11/12 md:w-2/5 lg:w-full mb-5 md:mb-10">
           <h1 className="text-creme text-2xl md:text-3xl">Iniciar Trajeto</h1>
           <BotaoVoltar />
         </div>
@@ -62,6 +65,7 @@ export default function Trajeto(props: { id: number }) {
           onSubmit={iniciarTrajeto}
           className="flex flex-col items-center gap-6 container w-11/12 md:w-1/2 lg:w-full bg-white p-5 sm:p-8 rounded-2xl"
         >
+          {validarEndereco ? <></> : <p className="text-red-600">Endereco não encontrado</p>}
           <input
             type="text"
             placeholder="Início"

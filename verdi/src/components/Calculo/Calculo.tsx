@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Calculo() {
   const [distancia, setDistancia] = useState<string>("");
@@ -25,10 +26,11 @@ export default function Calculo() {
   return (
     <section className="min-h-[50vh] md:flex md:flex-col md:items-center md:justify-around w-[90vw] lg:w-full">
       <div className="`w-full md:flex items-center justify-between">
-        <div className="md:w-2/6 lg:w-5/12">
-          <h1 className="text-creme text-xl text-center md:text-3xl lg:text-4xl">
+        <div className="md:w-2/6 lg:w-5/12 text-center">
+          <h1 className="text-creme text-xl text-center md:text-3xl lg:text-4xl mb-5">
             Calcule o seu consumo mensal de carbono
           </h1>
+          <Link href={"http://localhost:8501/"} className="underline text-center text-xl text-green-400 hover:text-green-600 duration-300">Teste nossa calculadora com IA</Link>
         </div>
         <div className="md:w-2/6 lg:w-5/12">
           <form onSubmit={calcularCarbono} className="flex flex-col items-center gap-5 md:w-full bg-white p-5 rounded-2xl">
