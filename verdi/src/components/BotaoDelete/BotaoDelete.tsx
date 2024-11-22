@@ -48,7 +48,7 @@
                 id="deletar"
                 value={confirmarDelete}
                 onChange={(e) => setConfirmarDelete(e.target.value)}
-                className="bg-white px-2 w-64 placeholder:text-black sm:placeholder:text-xl sm:p-2 sm:w-1/2 mx-auto text-black
+                className="bg-white px-2 w-64 placeholder:text-black sm:placeholder:text-xl sm:p-2 sm:w-1/2 mx-auto text-center text-red-600
                           focus:outline-none focus:shadow-none border-2 border-b-black border-transparent"/>
             </div>
         <div className="flex justify-around">
