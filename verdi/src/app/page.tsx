@@ -9,7 +9,7 @@ export default function Home() {
       <Calculo />
       <div className="flex flex-col gap-5 min-h-[70vh] justify-center">
         <h1 className="text-creme text-center text-2xl lg:text-4xl">Contrate o nosso plano</h1>
-        <Planos />
+        <Planos /> 
       </div>
     </div>
   )
