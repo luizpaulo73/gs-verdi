@@ -1,4 +1,3 @@
-// components/ProgressBar.jsx
 import React from "react";
 
 export default function BarraProgresso(props:{ pontos:number, pontosNecessarios:number }) {

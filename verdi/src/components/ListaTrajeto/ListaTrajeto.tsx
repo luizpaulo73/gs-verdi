@@ -19,7 +19,7 @@ export default function ListaTrajeto(props: { id: number }) {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:8080/trajetos/usuario/${pessoa_id}`,
+          `https://python-verdi-deploy.vercel.app/trajetos/usuario/${pessoa_id}`,
           {
             method: "GET",
             headers: { "Content-Type": "application/json" },

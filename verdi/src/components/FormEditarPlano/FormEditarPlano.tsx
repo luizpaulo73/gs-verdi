@@ -10,7 +10,7 @@ export default function FormEditarPlano(props: {idUsuario:number , plano:string}
     const novoPlano = plano;
     if (plano) {
       try {
-        const responsePlano = await fetch(`http://localhost:8080/pessoas/${props.idUsuario}/trocarPlano`, {
+        const responsePlano = await fetch(`https://python-verdi-deploy.vercel.app/pessoas/${props.idUsuario}/trocarPlano`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ novoPlano }),

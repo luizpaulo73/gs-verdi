@@ -16,7 +16,7 @@ export default function FormEditarSenha(props: { idUsuario: number }) {
     if (validacaoSenha) {
       try {
         const response = await fetch(
-          `http://localhost:8080/pessoas/${props.idUsuario}/alterarSenha`,
+          `https://python-verdi-deploy.vercel.app/pessoas/${props.idUsuario}/alterarSenha`,
           {
             method: "PUT",
             headers: { "Content-Type": "application/json" },

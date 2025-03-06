@@ -16,7 +16,7 @@ export default function BotaoDelete(props: { idUsuario: number }) {
     }
     try {
       const response = await fetch(
-        `http://localhost:8080/pessoas/${idUsuario}`,
+        `https://python-verdi-deploy.vercel.app/pessoas/${idUsuario}`,
         {
           method: "DELETE",
         }

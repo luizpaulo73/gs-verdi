@@ -29,7 +29,7 @@ export default function FormCadastro() {
     try {
       const requestBody = { nome, cpf, email, senha, planos };
 
-      const response = await fetch(`http://localhost:8080/pessoas/cadastro`, {
+      const response = await fetch(`https://python-verdi-deploy.vercel.app/pessoas/cadastro`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestBody),
